@@ -40,6 +40,8 @@
     font-size: 1.2rem;
     margin: auto;
     border-radius: 3px;
+    position: relative;
+    margin-top: 100px;
     transition: 1s
 
 

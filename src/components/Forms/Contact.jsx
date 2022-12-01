@@ -23,11 +23,11 @@ const email= 'pw@webdeveloper-peterwolf.com'
     return(
         <div className={styles.formWrapper}>
             <h1>Contact</h1>
-            <p>Let´s get in touch!</p>
+            <p>Send me a message with some details and I will reply to you  as soon as possible</p>
 
-            <Box component="form" noValidate autoComplete="off" className={styles.form} sx={{ '& .MuiTextField-root': { m: 4, width: '35ch ' }}}>
+            <Box component="form" noValidate autoComplete="off" className={styles.form} sx={{ '& .MuiTextField-root': { m: 4, width: '25ch ' }}}>
                 <div >
-            <TextField id="outlined-basic" className={styles.inputField} onChange={handleChange} name="subject" label="Request Subject" variant="outlined" autoFocus />
+            <TextField id="outlined-basic" className={styles.inputField} onChange={handleChange} name="subject" label="Request Subject" variant="outlined"  />
             </div>
           
             <div> 
