@@ -17,13 +17,14 @@
  text-decoration: none;
  font-weight: 400;
  font-size: 1.4rem;
+ color: black;
  
 
 }
 
 
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 850px) {
 
     .mainNavigation{
         max-width: 55%;
@@ -44,7 +45,7 @@
  border-radius: 3px;
  outline: 2px solid black;
  color: black;
- transition: 1s ease;
+ transition: 1s ;
     }
 
     .navLink:hover{

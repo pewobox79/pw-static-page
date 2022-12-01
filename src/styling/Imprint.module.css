@@ -6,3 +6,9 @@
     text-align: center;
 
 }
+
+@media screen and (min-width: 850px) {
+    .impressum{
+        max-width: 50%
+    }
+}
