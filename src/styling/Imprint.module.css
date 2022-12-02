@@ -1,9 +1,10 @@
 .impressum{
 
-    height: 300px;
+    height: auto;
     width: 80%;
     margin: auto;
     text-align: center;
+    padding-bottom: 50px;
 
 }
 

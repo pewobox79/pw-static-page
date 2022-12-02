@@ -1,8 +1,9 @@
-import { Button, TextField } from '@mui/material'
+import { Avatar, Button, TextField } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
 import styles from '../../styling/Contact.module.css'
 import { ButtonBase } from '@mui/material';
+import AvatarImg from '../../assets/frontend-web-developer_peterwolf.jpg';
 
 
 export default function Contact(){
@@ -21,8 +22,11 @@ console.log(message)
 
 const email= 'pw@webdeveloper-peterwolf.com'
     return(
+     
         <div className={styles.formWrapper}>
             <h1>Contact</h1>
+
+            <Avatar alt="Remy Sharp" src={AvatarImg} sx={{width: "150px", height: "150px", filter: "grayscale(1)", margin: "30px auto",}} />
             <p>Send me a message with some details and I will reply to you  as soon as possible</p>
 
             <Box component="form" noValidate autoComplete="off" className={styles.form} sx={{ '& .MuiTextField-root': { m: 4, width: '25ch ' }}}>
@@ -33,9 +37,12 @@ const email= 'pw@webdeveloper-peterwolf.com'
             <div> 
                 <TextField className={styles.inputField} label="Your Message" multiline rows={5} name="body" onChange={handleChange}/>
             </div>
-               
-            </Box>
             <a variant="contained" className={styles.requestButton}href={`mailto:${email}?subject=${message.subject}&body=${message.body} `}>Send Request</a>
-        </div>
+      
+            </Box>
+              
+
+</div>
+
     )
 }
