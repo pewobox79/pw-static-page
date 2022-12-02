@@ -1,4 +1,4 @@
-import { Avatar, Button, TextField } from '@mui/material'
+import { Avatar, TextField } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
 import styles from '../../styling/Contact.module.css'
@@ -8,20 +8,29 @@ import Head from '../assetsComponents/Head';
 import LinkedInIcon from '../../assets/socialIcons/linkedIn_icon.png'
 
 export default function Contact(){
+    const email= 'pw@webdeveloper-peterwolf.com'
 
 const [message, setMessage] = useState({
     subject: "",
     body: ""
-})
+});
+
+const [valid, setValid] = useState(false);
+
+const emailHref = valid ? `mailto:${email}?subject=${message.subject}&body=${message.body} `: "";
 
 function handleChange(e){
-
-    setMessage(prev =>({...prev, [e.target.name]: e.target.value}))
+ 
+    setMessage(prev =>({...prev, [e.target.name]: e.target.value}));
+    if(message.body.length > 0 && message.body.length > 0 ){
+        setValid(true);
+    }
     
 }
-console.log(message)
 
-const email= 'pw@webdeveloper-peterwolf.com'
+
+
+
     return(
      <section className={styles.contactSection} >
         <div className={styles.formWrapper}>
@@ -39,7 +48,7 @@ const email= 'pw@webdeveloper-peterwolf.com'
             <div> 
                 <TextField className={styles.inputField} label="Your Message" multiline rows={5} name="body" onChange={handleChange}/>
             </div>
-            <a variant="contained" className={styles.requestButton}href={`mailto:${email}?subject=${message.subject}&body=${message.body} `}>Send Request</a>
+            <a variant="contained" className={styles.requestButton} href={emailHref}>Send Request</a>
       
             </Box>
               
