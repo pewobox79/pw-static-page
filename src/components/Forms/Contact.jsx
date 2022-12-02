@@ -17,7 +17,7 @@ const [message, setMessage] = useState({
 
 const [valid, setValid] = useState(false);
 
-const emailHref = valid ? `mailto:${email}?subject=${message.subject}&body=${message.body} `: "";
+const emailHref = valid ? `mailto:${email}?subject=${message.subject}&body=${message.body} `: "javascript:alert('Please fill out the form before sending...!')";
 
 function handleChange(e){
  
@@ -27,8 +27,6 @@ function handleChange(e){
     }
     
 }
-
-
 
 
     return(
