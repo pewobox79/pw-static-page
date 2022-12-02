@@ -1,11 +1,22 @@
+.contactSection{
+    display: flex;
+    flex-direction: column
+    
+}
+
+.paragraph{
+    padding: 40px
+}
 .formWrapper{
     display: flex;
-    height: 60vh;
+    min-height: 60vh;
+    height: auto;
     width: 100%;
     margin: 0;
     flex-direction: column;
     text-align: center;
     padding: 30px 0;
+   
 }
 
 .form{
@@ -51,4 +62,36 @@
     background-color: white;
     color: black;
 
+}
+
+.socialMediaContact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    min-height: 40vh
+}
+
+.socialIcon{
+    filter: grayscale(100%) brightness(70%) contrast(2)
+}
+
+@media screen and (min-width: 650px){
+
+    .contactSection{
+        flex-direction: row
+    }
+    .socialMediaContact, .formWrapper{
+        width: 50%
+    }
+}
+
+@media screen and (min-width: 900px){
+
+    .paragraph{
+        padding: 0 80px
+    }
 }

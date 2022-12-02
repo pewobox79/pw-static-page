@@ -5,7 +5,7 @@ import styles from '../../styling/Contact.module.css'
 import { ButtonBase } from '@mui/material';
 import AvatarImg from '../../assets/frontend-web-developer_peterwolf.jpg';
 import Head from '../assetsComponents/Head';
-
+import LinkedInIcon from '../../assets/socialIcons/linkedIn_icon.png'
 
 export default function Contact(){
 
@@ -23,13 +23,13 @@ console.log(message)
 
 const email= 'pw@webdeveloper-peterwolf.com'
     return(
-     
+     <section className={styles.contactSection} >
         <div className={styles.formWrapper}>
             <Head title="Contact | Hire Peter Wolf as Web Developer" descr="Web Developer Peter Wolf | Request time availabiltiy  " keywords="web developer, availabilty, frontend development, contact form, hire me"/>
             <h1>Contact</h1>
 
             <Avatar alt="Remy Sharp" src={AvatarImg} sx={{width: "150px", height: "150px", filter: "grayscale(1)", margin: "30px auto",}} />
-            <p>Send me a message with some details and I will reply to you  as soon as possible</p>
+            <p className={styles.paragraph}>Send me a message with some details and I will reply to you  as soon as possible</p>
 
             <Box component="form" noValidate autoComplete="off" className={styles.form} sx={{ '& .MuiTextField-root': { m: 4, width: '25ch ' }}}>
                 <div >
@@ -45,6 +45,11 @@ const email= 'pw@webdeveloper-peterwolf.com'
               
 
 </div>
+<div className={styles.socialMediaContact}>
+<h1>Meet me on social media</h1>
+<a href="https://www.linkedin.com/in/frontend-developer-seo-expert-peterwolf/" title="Peter Wolf - Web Developer & Advisor LinkedIn Profile Page" target="_blank" rel="noreferrer-noopener"><img className={styles.socialIcon} src={LinkedInIcon} height="100px" alt="Linkedin Profile Link to Peter Wolf"/></a>
+</div>
+</section>
 
     )
 }
