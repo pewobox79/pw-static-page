@@ -22,7 +22,7 @@ E-Mail: office@webdeveloper-peterwolf.com</p>
 <h2>Umsatzsteuer-ID</h2>
 
 <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
- (Nummer noch nicht zugeteilt)</p>
+154/289/90509</p>
 
 <h2>Gewerbeanmeldung</h2>
 
