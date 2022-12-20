@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/peter-wolf-webdeveloper.png';
+import Logo from '../assets/peter-wolf-web-developer-advisor.png';
 
 import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
