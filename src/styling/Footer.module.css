@@ -4,8 +4,9 @@
     justify-content: center;
     width: 100%;
     height: auto;
-    
-    top: 0
+    background-color: white;
+    top: 0;
+    z-index: 100
 
 }
 
@@ -13,8 +14,8 @@
 
     #mainFooter{
         position: relative;
-        width: 50%;
-        margin: auto
+        margin: auto;
+    
     }
     
 }
