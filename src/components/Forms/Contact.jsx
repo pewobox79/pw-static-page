@@ -74,6 +74,8 @@ export default function Contact() {
                         <EventIcon sx={{fontSize: "6rem", color: "black"}}/>
                     </a>
                 </div>
+
+
             </div>
         </section>
 

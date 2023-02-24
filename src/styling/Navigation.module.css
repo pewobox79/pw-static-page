@@ -12,6 +12,7 @@
     z-index: 20;
 
 
+
 }
 
 .navLink{
@@ -31,7 +32,8 @@
         max-width: 55%;
         margin: auto;
         position: relative;
-        border-top: 0
+        border-top: 0;
+        padding: 20px 0
         
 
     }  
