@@ -2,21 +2,30 @@
 import style from '../../../styling/CoreValues.module.css';
 import CoreValueItem from "./CoreValueItem.jsx";
 
+import authenticityIcon from '../../../assets/icons/corevalues/authenticity.png'
+import integrityIcon from '../../../assets/icons/corevalues/integrity.png'
+import trustworthynessIcon from '../../../assets/icons/corevalues/trustworthy.png'
+import focusIcon from '../../../assets/icons/corevalues/focus.png'
+import qualtiyIcon from '../../../assets/icons/corevalues/focus.png'
+import commitmentIcon from '../../../assets/icons/corevalues/commitment.png'
+import responsibilityIcon from '../../../assets/icons/corevalues/responsibility.png'
+import curiosityIcon from '../../../assets/icons/corevalues/learning.png'
+
 
 export default function CoreValues(props) {
     console.log('core values', props);
-    const coreValueArray = props.coreValues?.split(',');
+    const coreValueArray = props.field_core_values?.split(',');
     console.log(coreValueArray);
 
     const coreValueIcons = {
-        authenticity: '/assets/icons/corevalues/authenticity.png',
-        integrity: '/assets/icons/corevalues/integrity.png',
-        trustworthyness: '/assets/icons/corevalues/trustworthy.png',
-        focus: '/assets/icons/corevalues/focus.png',
-        quality: '/assets/icons/corevalues/quality.png',
-        commitment: '/assets/icons/corevalues/commitment.png',
-        responsibility: '/assets/icons/corevalues/responsibility.png',
-        curiosity: '/assets/icons/corevalues/learning.png',
+        authenticity: authenticityIcon,
+        integrity: integrityIcon,
+        trustworthyness: trustworthynessIcon,
+        focus: focusIcon,
+        quality: qualtiyIcon,
+        commitment: commitmentIcon,
+        responsibility: responsibilityIcon,
+        curiosity: curiosityIcon,
     };
 
     let coreValueImageUrl = '';

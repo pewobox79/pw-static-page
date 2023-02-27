@@ -36,6 +36,10 @@
     transition: .6s;
 }
 
+.coreValueItem > img{
+    width: auto
+}
+
 .coreValueItem:hover{
     outline: 7px solid var(--mainGray);
 }

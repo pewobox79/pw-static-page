@@ -1,4 +1,5 @@
 import style from '../../../styling/Testimonial.module.css';
+import quoteIcon from '../../../assets/icons/left-quotes.png'
 
 
 export default function TestimonialQuote({ quote }) {
@@ -6,7 +7,7 @@ export default function TestimonialQuote({ quote }) {
         <div className={style.testimonialQuote}>
             <div className={style.testimonialIcon}>
                 <img
-                    src={'/assets/icons/left-quotes.png'}
+                    src={quoteIcon}
                     width={20}
                     height={20}
                     alt={'Peter wolf testimonials quote icon'}

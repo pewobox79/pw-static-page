@@ -3,11 +3,24 @@ import { useEffect, useState } from 'react';
 import SpinnerComponent from "../../assetsComponents/SpinnerComponent.jsx";
 import ServiceItem from "./ServiceItem.jsx";
 import SectionHeader from "../../assetsComponents/SectionHeader.jsx";
+const backendURL = import.meta.env.VITE_DRUPAL_BACKEND_URL
 
 
 function ServiceSection({ serviceData }) {
     const [services, setServices] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+        const dataFetch = fetch(`${backendURL}services`,requestOptions )
+            .then(data => data.json())
+            .then(response => setServices(response))
+    }, [])
 
     //TODO english selection value update
     const languageType = 'English';

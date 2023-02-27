@@ -1,9 +1,9 @@
 import style from '../../styling/AboutMe.module.css';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+const imgOriginUrl = import.meta.env.VITE_DRUPAL_IMAGE_URL
 
 export default function AboutMeHeader(props) {
-    console.log("props about me",props);
-    const imgURL = 'https://pewobox.com' + props.field_profile_image;
+    const imgURL = imgOriginUrl + props.field_profile_image;
     return (
         <section className={style.headerSection}>
             <div className={style.headerImageContainer}>

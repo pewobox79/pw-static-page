@@ -15,7 +15,7 @@
 
 .serviceItemContainer {
     height: 180px;
-    width: 100%;
+    width: 90%;
     outline: 1px solid var(--mainGreen);
     background-color: var(--mainLightGray);
     margin-top: 30px;
@@ -44,7 +44,9 @@
     margin-top: 5px;
     color: black
 }
-
+.serviceIcon > img{
+    width: auto
+}
 .serviceTitle{
     font-weight: 600;
 }

@@ -1,11 +1,23 @@
 import style from '../../../styling/Testimonial.module.css';
 import { useEffect, useState } from 'react';
 import TestimonialBox from "./TestimonialBox.jsx";
-import HeaderText from "../../assetsComponents/HeaderText.jsx";
+const backendURL = import.meta.env.VITE_DRUPAL_BACKEND_URL
 
 function TestimonialSection() {
     const [isLoading, setIsLoading] = useState(false);
     const [testimonialData, setTestimonialData] = useState([]);
+
+    useEffect(() => {
+        const requestOptions = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+        const dataFetch = fetch(`${backendURL}testimonials`,requestOptions )
+            .then(data => data.json())
+            .then(response => setTestimonialData(response))
+    }, [])
 
     const testimonialItems = testimonialData?.map((item) => {
         return (

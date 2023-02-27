@@ -1,20 +1,12 @@
 import { useEffect, useState } from 'react';
 import ExperienceItem from "./ExperienceItem.jsx";
+import SpinnerComponent from "../../assetsComponents/SpinnerComponent.jsx";
 
 
 export default function EducationContainer() {
     const URL = 'https://pewobox.com/api/educationList';
 
-    const [education, setEducation] = useState([
-        {
-            title: '',
-            field_start_date: '',
-            field_end_date: '',
-            field_education_grade: '',
-            field_job_title: '',
-            uuid: '',
-        },
-    ]);
+    const [education, setEducation] = useState([]);
 
     useEffect(() => {
         const requestOptions = {
@@ -26,7 +18,10 @@ export default function EducationContainer() {
 
         const dataFetch = fetch(URL, requestOptions)
             .then((data) => data.json())
-            .then((response) => setEducation(response));
+            .then((response) => {
+                console.log("education", response)
+                setEducation(response)});
+
     }, []);
 
     const experienceItems = education.map((item) => {
@@ -42,5 +37,5 @@ export default function EducationContainer() {
         );
     });
 
-    return <>{experienceItems}</>;
+    return <>{experienceItems.length > 0? experienceItems: <SpinnerComponent/>}</>;
 }

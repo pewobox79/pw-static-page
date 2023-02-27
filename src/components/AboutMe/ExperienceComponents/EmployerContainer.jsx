@@ -1,18 +1,12 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import ExperienceItem from "./ExperienceItem.jsx";
+import SkillExperienceSection from "../SkillExperienceSection.jsx";
+import SpinnerComponent from "../../assetsComponents/SpinnerComponent.jsx";
 
 export default function EmployerContainer() {
     const URL = 'https://pewobox.com/api/employerList';
 
-    const [employers, setEmployers] = useState([
-        {
-            title: '',
-            field_start_date: '',
-            field_end_date: '',
-            field_job_title: '',
-            uuid: '',
-        },
-    ]);
+    const [employers, setEmployers] = useState([]);
 
     useEffect(() => {
         const requestOptions = {
@@ -25,6 +19,8 @@ export default function EmployerContainer() {
         const dataFetch = fetch(URL, requestOptions)
             .then((data) => data.json())
             .then((response) => setEmployers(response));
+
+
     }, []);
 
     const experienceItems = employers?.map((item) => {
@@ -39,5 +35,5 @@ export default function EmployerContainer() {
         );
     });
 
-    return <>{experienceItems}</>;
+    return <>{experienceItems.length > 0 ? experienceItems : <SpinnerComponent/>}</>;
 }

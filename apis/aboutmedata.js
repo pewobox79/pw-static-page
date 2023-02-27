@@ -1,13 +1,13 @@
 const backendURL = import.meta.env.VITE_DRUPAL_BACKEND_URL
 
 export async function getPersonalData(){
-    const options ={
-        method: "GET",
-        headers:{
-            "Access-Control-Allow-Origin": "no-cors"
-        }
-    }
-    const response = await fetch(`${backendURL}expertlist`, options)
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+    const response = await fetch(`${backendURL}expertlist`, requestOptions)
     const data = response.json()
     return data
 }
