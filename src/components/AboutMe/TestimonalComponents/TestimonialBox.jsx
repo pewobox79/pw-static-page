@@ -11,7 +11,7 @@ export default function TestimonialBox({avatar, company, role, quote, title}) {
                 {avatar ? (
                     <Avatar alt={`Avatar of ${title}`} src={`${avatarImage}`} />
                 ) : (
-                    <Avatar>pw</Avatar>
+                    <Avatar>{title.slice(0,2).toUpperCase()}</Avatar>
                 )}
             </div>
 

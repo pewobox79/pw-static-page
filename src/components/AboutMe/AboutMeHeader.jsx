@@ -1,9 +1,16 @@
 import style from '../../styling/AboutMe.module.css';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-const imgOriginUrl = import.meta.env.VITE_DRUPAL_IMAGE_URL
+import {personalData} from "./index.jsx";
+import {PersonalDataController} from "../../../apis/controller/dataController.js";
 
-export default function AboutMeHeader(props) {
-    const imgURL = imgOriginUrl + props.field_profile_image;
+export default function AboutMeHeader() {
+
+    const myExpertData = new PersonalDataController(personalData, "English")
+    const imgURL = myExpertData.getExpertImage()
+    const persQuote = myExpertData.getPersonalQuote()
+    const persDescription = myExpertData.getExpertDescription()
+    const expertName = myExpertData.getExpertName()
+
     return (
         <section className={style.headerSection}>
             <div className={style.headerImageContainer}>
@@ -12,15 +19,15 @@ export default function AboutMeHeader(props) {
                     width={400}
                     height={500}
                     style={{ filter: 'grayscale(100%)' }}
-                    alt={props.title}
+                    alt={expertName}
                 />
             </div>
 
             <div className={style.headerQuoteContainer}>
                 <div className={style.aboutMeContentBox}>
                     <FormatQuoteIcon sx={{ fontSize: '5rem' }} />
-                    <blockquote>{props.field_personal_quote}</blockquote>
-                    <p>{props.field_description}</p>
+                    <blockquote>{persQuote}</blockquote>
+                    <p>{persDescription}</p>
                 </div>
             </div>
         </section>

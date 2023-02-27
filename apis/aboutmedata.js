@@ -11,3 +11,17 @@ export async function getPersonalData(){
     const data = response.json()
     return data
 }
+
+
+export async function getSkillData(){
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+    const response = await fetch(`${backendURL}listOfSkills`, requestOptions)
+    const data = response.json()
+    return data
+
+}

@@ -18,11 +18,13 @@ export default function HeaderText({title, align, margin, variant}) {
     }
 
     return (
-        <Typography
-            sx={{textAlign: `${alignText}`, marginTop: `${marginValue}`}}
-            variant={headerType}
-        >
-            {title}
-        </Typography>
+        <div style={{paddingTop: "30px"}}>
+            <Typography
+                sx={{textAlign: `${alignText}`, marginTop: `${marginValue}`}}
+                variant={headerType}
+            >
+                {title}
+            </Typography>
+        </div>
     );
 }

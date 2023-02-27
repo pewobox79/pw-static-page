@@ -10,7 +10,7 @@ export default function Homepage(){
     return (
         <div className={styles.mainPage}> 
         <Helmet>
-        <title>Peter Wolf | Freelance WebDeveloper & Advisor </title>
+        <title>Peter Wolf | Freelance WebDeveloper & Advisor </title>
     <meta name="description" content="Freelance WebDeveloper & Advisor Peter Wolf. Teckstack is JavaScript, ReactJS, NextJS, PreactJS with focus on headless approach. "/>
     <meta name="keywords" content="web development, reactjs, nextjs, freelance, web developer, advisor, consultant, javascript, headless cms"/>
     <meta name="type" property="og:type" content="website"/>

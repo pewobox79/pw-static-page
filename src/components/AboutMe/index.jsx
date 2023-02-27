@@ -8,38 +8,31 @@ import Head from "../assetsComponents/Head.jsx";
 import ExperienceSection from "./ExperienceComponents/ExperienceSection.jsx";
 import ServiceSection from "./ServiceComponents/ServiceSection.jsx";
 import TestimonialSection from "./TestimonalComponents/TestimonialSection.jsx";
-const backendURL = import.meta.env.VITE_DRUPAL_BACKEND_URL
+
+export let personalData
+try{
+     personalData = await getPersonalData()
+}catch (err){
+    console.log(err)
+}
 
 const AboutMe = () => {
-    const [aboutMeData, setAboutMeData] = useState([])
+    const [aboutMeData, setAboutMeData] = useState(personalData)
 
-    useEffect(() => {
-        const requestOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-       const dataFetch = fetch(`${backendURL}expertlist`,requestOptions )
-           .then(data => data.json())
-           .then(response => setAboutMeData(response))
-    }, [])
-
-    console.log(aboutMeData)
 
     return (
         <>
             <Head title={"About Peter Wolf the web developer & advisor!"}
                   descr={"Get to know peter wolf better! He is a Freelance Web Developer and Advisor to "}
                   keywords={"CoreValues, freelancer, web developer, techstack"}/>
-            <AboutMeHeader {...aboutMeData[1]} />
-            <HeaderText title={"Skills"} variant={"h2"} align={"center"} margin={"0"}/>
+            <AboutMeHeader />
+            <HeaderText title={"Some relevant skills"} variant={"h2"} align={"center"} margin={"0"}/>
             <SkillExperienceSection {...aboutMeData[1]}/>
-            <HeaderText title={"CoreValues"} align={"center"} margin={"0"} variant={"h2"}/>
+            <HeaderText title={"Core values"} align={"center"} margin={"0"} variant={"h2"}/>
             <CoreValues {...aboutMeData[1]}/>
             <HeaderText title={"Experience & Education"} align={"center"} margin={"0"} variant={"h2"}/>
             <ExperienceSection/>
-            <HeaderText title={"benefit with me"} variant={"h2"} align={"center"} margin={"0"}/>
+            <HeaderText title={"What I will bring to you!"} variant={"h2"} align={"center"} margin={"0"}/>
             <ServiceSection/>
             <HeaderText title={"Some client feedback"} variant={"h2"} align={"center"} margin={"0"}/>
             <TestimonialSection/>

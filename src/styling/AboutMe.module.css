@@ -10,9 +10,14 @@
 
 }
 
-.headerImageContainer {
-    display: none;
-
+.headerImageContainer{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.headerImageContainer > img{
+    width: auto;
+    margin: auto
 }
 
 .headerQuoteContainer {
@@ -242,9 +247,7 @@
 
     }
 
-    .headerImageContainer > img{
-        width: auto
-    }
+
 
     .headerQuoteContainer {
         width: 50%
