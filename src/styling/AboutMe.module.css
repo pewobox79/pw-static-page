@@ -1,0 +1,281 @@
+.headerSection {
+    background-color: var(--mainLightGray);
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    height: auto
+
+}
+
+.headerImageContainer {
+    display: none;
+
+}
+
+.headerQuoteContainer {
+    display: flex;
+    flex-grow: 1;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.aboutMeContentBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.aboutMeContentBox p {
+    padding: 0 30px;
+    line-height: 25px;
+}
+
+.aboutMeContentBox blockquote {
+    font-size: 2rem;
+}
+
+
+/*skills and languages*/
+.skillAndLanguageSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    text-align: center;
+    padding: 30px 0;
+
+}
+
+/*SKILLS*/
+.skillContainer {
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.skillListingBox {
+    padding: 0 20px;
+    width: 100%;
+    max-width: 550px
+}
+
+.skillItemBody {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: auto;
+    padding: 4px 4px 4px 0;
+    margin: 20px 0;
+    border-end-end-radius: 10px;
+    border-start-end-radius: 10px;
+}
+
+.skillLevel {
+    text-align: left;
+    padding: 2px;
+    font-size: 0.7rem;
+    font-weight: 300;
+
+    border-end-end-radius: 10px;
+    border-start-end-radius: 10px;
+
+}
+
+/*LANGUAGE*/
+.languageContainer {
+    min-height: 300px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.languageItemsBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+}
+
+.languageItem {
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    border-radius: 50%;
+    background-color: var(--mainLightGray);
+    border: 3px solid var(--mainGreen);
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    transition-duration: 2s;
+}
+
+.languageItem:hover {
+    rotate: y 360deg
+}
+
+.languageItem .header {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/*EXPERIENCE*/
+.experienceSection {
+    min-height: 500px;
+    background-color: var(--mainLightGray);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    height: auto;
+    margin: 60px 0
+
+}
+
+.experienceTitle {
+    width: 80%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px
+}
+
+.experienceTitleLine {
+    width: 50%;
+    border-top: 1px solid var(--mainGreen);
+    margin-left: 5px;
+}
+
+.experienceSectionInner {
+    width: 100%;
+}
+
+.experienceItem {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 70px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.expJobDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-height: 90px;
+    text-align: center;
+    max-width: 50%;
+    flex-grow: 3
+
+}
+
+.exprCompany {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.exprJobTitle {
+    font-size: 0.7rem;
+    font-weight: 300
+}
+
+.lineBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.exprVerticalLine {
+    height: 50px;
+    width: 10%;
+    border: 1px solid var(--mainGreen)
+}
+
+.exprCircle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 5px 0;
+    border: 1px solid var(--mainGreen)
+}
+
+
+@media screen and (min-width: 769px) {
+    .headerSection {
+        flex-direction: row;
+        padding-top: 100px
+    }
+
+    .headerImageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0;
+        width: 50%
+
+    }
+
+    .headerQuoteContainer {
+        width: 50%
+    }
+
+    .aboutMeContentBox p {
+        font-size: 1.4rem;
+        line-height: 30px;
+    }
+
+    /*Skill Language Section*/
+    .skillAndLanguageSection {
+        flex-direction: row;
+    }
+
+    /*skills     */
+    .skillContainer,
+    .languageContainer {
+        width: 50%;
+        margin-top: 0
+
+    }
+
+    /*languages*/
+    .languageItemsBox {
+        flex-direction: row;
+    }
+
+
+    /*EXPERIENCE*/
+    .experienceSection {
+        flex-direction: row;
+
+    }
+
+
+
+}

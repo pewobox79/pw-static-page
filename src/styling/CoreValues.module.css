@@ -1,0 +1,58 @@
+.coreValueSection{
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.coreValueInner{
+    width: 100%;
+    margin: 0 auto;
+    min-height: 150px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.coreValueItemContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.coreValueItem{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    outline: 1px solid var(--mainGray);
+    background-color: var(--mainGreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transition: .6s;
+}
+
+.coreValueItem:hover{
+    outline: 7px solid var(--mainGray);
+}
+
+.coreValueItemContainer p{
+
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-weight: 500;
+    margin-top: -15px
+
+}
+
+@media screen and (min-width: 620px){
+    .coreValueInner{
+        width: 70%
+    }
+}
