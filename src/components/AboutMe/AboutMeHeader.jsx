@@ -1,9 +1,9 @@
 import style from '../../styling/AboutMe.module.css';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import {personalData} from "./index.jsx";
+
 import {PersonalDataController} from "../../../apis/controller/dataController.js";
 
-export default function AboutMeHeader() {
+export default function AboutMeHeader({personalData}) {
 
     const myExpertData = new PersonalDataController(personalData, "English")
     const imgURL = myExpertData.getExpertImage()

@@ -1,21 +1,17 @@
 import style from '../../styling/ProjectsOverview.module.css';
 import Head from "../assetsComponents/Head.jsx";
 import ProjectItem from "./ProjectItem.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import SectionHeader from "../assetsComponents/SectionHeader.jsx";
-
-export let projectData
-try{
-    projectData = await getDataFromBackend("projectlist")
-}catch(err){
-    console.log("project data error message",err.message)
-}
 
 function ProjectsOverview() {
 
     const [projectList, setProjectList]=useState(projectData)
 
+    useEffect(()=>{
+        const projectData = getDataFromBackend("projectlist").then(res => setProjectList(res))
+    },[])
     if (!projectList) {
         return <h1>no data</h1>
 
