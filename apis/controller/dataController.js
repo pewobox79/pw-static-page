@@ -1,4 +1,4 @@
-const sourceUrl = import.meta.env.VITE_DRUPAL_IMAGE_URL
+const sourceUrl = import.meta.env.VITE_VERCEL_DRUPAL_IMAGE_URL
 
 
 export class PersonalDataController {

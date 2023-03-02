@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import SpinnerComponent from "../../assetsComponents/SpinnerComponent.jsx";
 import ServiceItem from "./ServiceItem.jsx";
 import SectionHeader from "../../assetsComponents/SectionHeader.jsx";
-const backendURL = import.meta.env.VITE_DRUPAL_BACKEND_URL
+const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL
 
 
 function ServiceSection({ serviceData }) {

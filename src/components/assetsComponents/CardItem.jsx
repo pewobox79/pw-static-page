@@ -4,7 +4,7 @@ import style from '../../styling/Card.module.css';
 import GoToCourseButton from '../assetsComponents/Buttons/GoToCourseButton';
 
 export default function CardItem({headerImage, description, title, uuid, courseUrl, partnerName, buttonTitleText}) {
-    const sourceURL = import.meta.env.VITE_DRUPAL_IMAGE_URL
+    const sourceURL = import.meta.env.VITE_VERCEL_DRUPAL_IMAGE_URL
     const imgUrl = sourceURL + headerImage;
     return (
         <Card key={uuid} className={style.cardItem}>
