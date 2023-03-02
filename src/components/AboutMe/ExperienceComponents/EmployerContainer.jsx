@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react';
 import ExperienceItem from "./ExperienceItem.jsx";
-import SkillExperienceSection from "../SkillExperienceSection.jsx";
 import SpinnerComponent from "../../assetsComponents/SpinnerComponent.jsx";
 
 export default function EmployerContainer() {

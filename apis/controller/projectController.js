@@ -7,7 +7,7 @@ export class ProjectController{
 
     getSingleProject(){
         let selectedProject
-        this.allProjects.map((item)=>{
+        this.allProjects?.map((item)=>{
             console.log(item)
             if(item.langcode === this.language){
                 if(item.uuid === this.projectId){
