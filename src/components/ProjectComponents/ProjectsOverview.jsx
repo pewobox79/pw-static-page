@@ -16,7 +16,7 @@ function ProjectsOverview() {
         return <h1>no data</h1>
 
     } else {
-        const courseItems = projectList.map((projectItem) => {
+        const courseItems = projectList?.map((projectItem) => {
             return (
                 <ProjectItem
                     key={projectItem.uuid}

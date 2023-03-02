@@ -2,8 +2,8 @@ import style from '../../styling/AboutMe.module.css';
 import { useEffect, useState } from 'react';
 import SkillItem from "./SkillItem.jsx";
 import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
-const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL
-
+/*const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL*/
+const backendURL = "https://pewobox.com/api/"
 function SkillComponent() {
     const [isLoading, setIsLoading] = useState(false);
     const [skillsData, setSkillsData] = useState([]);

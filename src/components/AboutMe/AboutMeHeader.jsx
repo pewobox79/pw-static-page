@@ -8,6 +8,7 @@ export default function AboutMeHeader({personalData}) {
 
     const myExpertData = new PersonalDataController(personalData, "English")
     const imgURL = myExpertData.getExpertImage()
+    console.log(imgURL)
     const persQuote = myExpertData.getPersonalQuote()
     const persDescription = myExpertData.getExpertDescription()
     const expertName = myExpertData.getExpertName()

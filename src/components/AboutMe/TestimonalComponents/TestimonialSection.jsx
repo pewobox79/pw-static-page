@@ -1,8 +1,8 @@
 import style from '../../../styling/Testimonial.module.css';
 import { useEffect, useState } from 'react';
 import TestimonialBox from "./TestimonialBox.jsx";
-const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL
-
+/*const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL*/
+const backendURL = "https://pewobox.com/api/"
 function TestimonialSection() {
     const [isLoading, setIsLoading] = useState(false);
     const [testimonialData, setTestimonialData] = useState([]);
