@@ -10,7 +10,7 @@ export class PersonalDataController {
 
     getExpertName(){
         let expertName
-        this.data.map((item)=>{
+        this.data?.map((item)=>{
             if(item.langcode === this.language){
                 expertName = item.title
             }
@@ -20,7 +20,7 @@ export class PersonalDataController {
     }
     getCoreValues() {
         let listOfValues
-        this.data.map((item)=>{
+        this.data?.map((item)=>{
             if(item.langcode === this.language){
                listOfValues = item.field_core_values
             }
@@ -31,7 +31,7 @@ export class PersonalDataController {
 
     getExpertImage() {
         let imgUrl
-        this.data.map((item) => {
+        this.data?.map((item) => {
             if (item.langcode === this.language) {
                 imgUrl = sourceUrl +
                     item.field_profile_image
@@ -42,7 +42,7 @@ export class PersonalDataController {
 
     getPersonalQuote() {
         let personalQuote
-        this.data.map((item) => {
+        this.data?.map((item) => {
             if (item.langcode === this.language) {
                 personalQuote = item.field_personal_quote
             }
@@ -53,7 +53,7 @@ export class PersonalDataController {
 
     getExpertDescription(){
         let personalDescription
-        this.data.map((item) => {
+        this.data?.map((item) => {
             if (item.langcode === this.language) {
                 personalDescription = item.field_description
             }

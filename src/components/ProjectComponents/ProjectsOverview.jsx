@@ -7,7 +7,7 @@ import SectionHeader from "../assetsComponents/SectionHeader.jsx";
 
 function ProjectsOverview() {
 
-    const [projectList, setProjectList]=useState(projectData)
+    const [projectList, setProjectList]=useState()
 
     useEffect(()=>{
         const projectData = getDataFromBackend("projectlist").then(res => setProjectList(res))

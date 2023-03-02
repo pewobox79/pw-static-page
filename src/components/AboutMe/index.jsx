@@ -8,16 +8,25 @@ import ExperienceSection from "./ExperienceComponents/ExperienceSection.jsx";
 import ServiceSection from "./ServiceComponents/ServiceSection.jsx";
 import TestimonialSection from "./TestimonalComponents/TestimonialSection.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
+import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 
 
 const AboutMe = () => {
-    const [aboutMeData, setAboutMeData] = useState()
-
-    useEffect(()=>{
-        const personalData = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
-    },[])
+    const [aboutMeData, setAboutMeData] = useState([])
+    const [loading, setLoading] =useState(false)
 
 
+
+useEffect(()=>{
+    setLoading(true)
+    const data = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
+setLoading(false)
+
+}, [])
+
+    if(loading){
+        return(<SpinnerComponent/>)
+    }
     return (
         <>
             <Head title={"About Peter Wolf the web developer & advisor!"}
