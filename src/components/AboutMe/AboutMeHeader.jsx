@@ -13,21 +13,23 @@ export default function AboutMeHeader() {
 
     return (
         <section className={style.headerSection}>
-            <div className={style.headerImageContainer}>
-                <img
-                    src={imgURL}
-                    width={400}
-                    height={500}
-                    style={{ filter: 'grayscale(100%)' }}
-                    alt={expertName}
-                />
-            </div>
+            <div className={style.headerSectionInner}>
+                <div className={style.headerImageContainer}>
+                    <img
+                        src={imgURL}
+                        width={400}
+                        height={500}
+                        style={{filter: 'grayscale(100%)'}}
+                        alt={expertName}
+                    />
+                </div>
 
-            <div className={style.headerQuoteContainer}>
-                <div className={style.aboutMeContentBox}>
-                    <FormatQuoteIcon sx={{ fontSize: '5rem' }} />
-                    <blockquote>{persQuote}</blockquote>
-                    <p>{persDescription}</p>
+                <div className={style.headerQuoteContainer}>
+                    <div className={style.aboutMeContentBox}>
+                        <FormatQuoteIcon sx={{fontSize: '5rem'}}/>
+                        <blockquote>{persQuote}</blockquote>
+                        <p>{persDescription}</p>
+                    </div>
                 </div>
             </div>
         </section>

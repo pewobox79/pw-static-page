@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {getPersonalData} from "../../../apis/aboutmedata.js";
 import AboutMeHeader from "./AboutMeHeader.jsx";
 import HeaderText from "../assetsComponents/HeaderText.jsx";
 import SkillExperienceSection from "./SkillExperienceSection.jsx";
@@ -8,10 +7,11 @@ import Head from "../assetsComponents/Head.jsx";
 import ExperienceSection from "./ExperienceComponents/ExperienceSection.jsx";
 import ServiceSection from "./ServiceComponents/ServiceSection.jsx";
 import TestimonialSection from "./TestimonalComponents/TestimonialSection.jsx";
+import {getDataFromBackend} from "../../../apis/dataProvider.js";
 
 export let personalData
 try{
-     personalData = await getPersonalData()
+     personalData = await getDataFromBackend("expertlist")
 }catch (err){
     console.log(err)
 }

@@ -9,9 +9,8 @@ export default function Footer(){
 
     return(
         <footer id={styles.mainFooter}>
-            <p> &#169; {date.getFullYear()} Peter Wolf. All Rights Reserved.</p>
-         <HorizontalLine/>
            <FooterNavigation/>
+            <p> &#169; {date.getFullYear()} Peter Wolf. All Rights Reserved.</p>
         </footer>
     )
 }

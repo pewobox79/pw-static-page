@@ -1,0 +1,22 @@
+.basicPageWrapper{
+    margin-top: 60px;
+
+
+}
+
+.basicPageInner{
+    width: 90%;
+    margin: auto
+}
+
+@media screen and (min-width: 768px) {
+    .basicPageWrapper{
+        margin-top: 120px
+    }
+
+    .basicPageInner{
+        text-align: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+}

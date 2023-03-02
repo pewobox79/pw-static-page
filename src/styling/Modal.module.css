@@ -1,0 +1,78 @@
+.modalSection {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContentBox {
+    background-color: white;
+    position: relative;
+    width: 90%;
+    height: 65%;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5%;
+    text-align: center
+
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 1rem;
+    font-weight: 300;
+    border: 0;
+    outline: 1px solid var(--mainGreen);
+    border-radius: 20%;
+    padding: 8px;
+    color: black;
+    background-color: var(--mainLightGray);
+    transition: 0.5s;
+}
+
+.modalCloseButton:hover {
+    color: white;
+    background-color: var(--mainGreen);
+    outline: 1px solid var(--mainLightGray);
+    border-radius: 50%
+
+}
+
+.goToButton{
+    border: 1px solid var(--mainBodyColor);
+    min-width: 200px;
+    width: auto;
+    color: white;
+    background-color: var(--mainGreen);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 5px;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.goToButton:hover{
+    cursor: pointer;
+    border: 1px solid var(--mainGreen);
+    color: var(--mainGreen);
+    background-color: var(--mainBodyColor);
+}
+
+@media screen and (min-width: 769px) {
+
+    .modalContentBox {
+        width: 50%
+    }
+}

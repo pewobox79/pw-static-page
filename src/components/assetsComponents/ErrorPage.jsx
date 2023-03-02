@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
+
 export default function ErrorPage(){
 
     return(
@@ -9,7 +10,7 @@ export default function ErrorPage(){
             
             <h1>Something went wrong!</h1>
 
-            <Link className={styles.navLink} to="/">Go Back to Home</Link>
+            <Link to="/">Go Back to Home</Link>
         </div>
     )
 }

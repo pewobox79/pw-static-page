@@ -1,0 +1,76 @@
+.coursesOverviewSection {
+    margin-top: 70px;
+}
+
+
+.cardWrapper {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-bottom: 40px;
+    flex-direction: column;
+    height: auto
+}
+
+.cardListingInner {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+
+}
+
+.cardItem {
+    width: 90%;
+    margin: 20px auto;
+
+}
+
+.cardContentBox{
+    min-height: 200px;
+    height: auto
+}
+
+.cardContentBox h3{
+    height: 80px
+
+}
+
+.cardContentBox p{
+    font-size: .8rem;
+    height: 80px
+
+}
+
+
+@media screen and (min-width: 620px) {
+    .coursesOverviewSection {
+        margin-top: 120px;
+    }
+
+    .cardWrapper {
+        flex-direction: row;
+        margin-top: 80px
+    }
+
+    .cardListingInner {
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+
+    }
+
+    .cardItem {
+        width: 45%;
+
+    }
+
+
+}
+
+@media screen and (min-width: 1025px){
+    .cardItem{
+        width: 30%
+    }
+}

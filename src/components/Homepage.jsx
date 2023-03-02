@@ -3,6 +3,8 @@ import Logo from '../assets/peter-wolf-web-developer-advisor_s.png';
 
 import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
+import {Link} from "react-router-dom";
+import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 
 export default function Homepage(){
 
@@ -21,8 +23,8 @@ export default function Homepage(){
   
         </Helmet>
             <img src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
-            <div style={{textAlign: "center"}}>
-            <h1>The website is coming soon...</h1>  
+            <div style={{textAlign: "center", paddingTop: "100px"}}>
+         <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
 
             </div>
         </div>
