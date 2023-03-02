@@ -3,16 +3,14 @@ import SectionHeader from '../assetsComponents/SectionHeader';
 import CardItem from '../assetsComponents/CardItem';
 import Head from "../assetsComponents/Head.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export let articleData
-try{
-    articleData = await getDataFromBackend("articlelist")
-}catch(err){
-    console.log(err.message)
-}
 export default function BlogOverview() {
-    const [article, setArticle] = useState(articleData)
+    const [article, setArticle] = useState()
+
+    useEffect(()=>{
+        const articleData = getDataFromBackend("articlelist").then(res => setArticle(res))
+    },[])
     const ArticleItems = article?.map((articleItem) => {
         console.log("article",articleItem)
         //TODO dynamic language switcher values

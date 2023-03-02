@@ -3,16 +3,18 @@ import SectionHeader from '../assetsComponents/SectionHeader';
 import CardItem from '../assetsComponents/CardItem';
 import Head from "../assetsComponents/Head.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export let coursesData
-try{
-    coursesData = await getDataFromBackend("courselist")
-}catch(err){
-    console.log(err.message)
-}
+
 export default function Course() {
-    const [courses, setCourses] = useState(coursesData)
+
+
+    const [courses, setCourses] = useState()
+
+
+    useEffect(()=>{
+    const courseData = getDataFromBackend("courselist").then(res => setCourses(res))
+    },[])
     const courseItems = courses?.map((courseItem) => {
         console.log(courseItem);
         //TODO dynamic language switcher values

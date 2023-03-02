@@ -8,16 +8,16 @@ import ProjectResponsibility from './ProjectResponsibility';
 import Head from "../assetsComponents/Head.jsx";
 import {ProjectController} from "../../../apis/controller/projectController.js";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
+import {useEffect, useState} from "react";
 
-export let allProjects
-try {
-    allProjects = await getDataFromBackend("projectlist")
-} catch (err) {
-    console.log(err.message)
-}
 export default function ProjectDetails(props) {
 
     const {id, title} = useParams();
+    const [allProjects, setAllProjects] = useState()
+
+    useEffect(()=>{
+        const projectData = getDataFromBackend("projectlist").then(res => setAllProjects(res))
+    },[])
 
     const projectDetails = new ProjectController(allProjects, "English", id)
 

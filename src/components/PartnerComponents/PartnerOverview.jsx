@@ -3,18 +3,17 @@ import SectionHeader from '../assetsComponents/SectionHeader';
 import CardItem from '../assetsComponents/CardItem';
 import Head from "../assetsComponents/Head.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export let partnerData
-try{
-    partnerData = await getDataFromBackend("partnerlist")
-}catch(err){
-    console.log(err.message)
-}
+
 export default function PartnerOverview() {
-    const [partner, setPartner] = useState(partnerData)
+    const [partner, setPartner] = useState()
+
+    useEffect(()=>{
+        const partnerData = getDataFromBackend("partnerlist").then(res => setPartner(res))
+    },[])
     const PartnerItems = partner?.map((partnerItem) => {
-        console.log("partner",partnerItem);
+
         return (
             <CardItem
                 key={partnerItem.uuid}

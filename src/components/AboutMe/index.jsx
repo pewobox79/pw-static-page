@@ -9,15 +9,13 @@ import ServiceSection from "./ServiceComponents/ServiceSection.jsx";
 import TestimonialSection from "./TestimonalComponents/TestimonialSection.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
 
-export let personalData
-try{
-     personalData = await getDataFromBackend("expertlist")
-}catch (err){
-    console.log(err)
-}
 
 const AboutMe = () => {
-    const [aboutMeData, setAboutMeData] = useState(personalData)
+    const [aboutMeData, setAboutMeData] = useState()
+
+    useEffect(()=>{
+        const personalData = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
+    },[])
 
 
     return (
@@ -25,7 +23,7 @@ const AboutMe = () => {
             <Head title={"About Peter Wolf the web developer & advisor!"}
                   descr={"Get to know peter wolf better! He is a Freelance Web Developer and Advisor to "}
                   keywords={"CoreValues, freelancer, web developer, techstack"}/>
-            <AboutMeHeader />
+            <AboutMeHeader personalData={aboutMeData}/>
             <HeaderText title={"Some relevant skills"} variant={"h2"} align={"center"} margin={"0"}/>
             <SkillExperienceSection {...aboutMeData[1]}/>
             <HeaderText title={"Core values"} align={"center"} margin={"0"} variant={"h2"}/>
