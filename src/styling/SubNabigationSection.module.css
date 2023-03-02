@@ -1,0 +1,69 @@
+.subNavigationSection{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: var(--mainGreen);
+    z-index: 400;
+}
+
+.subNavSectionInner{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+
+
+}
+.mainSubNavigation{
+    margin-bottom: 80px;
+
+}
+
+.subNavLegalNavigation{
+}
+.subNavItems{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 50px
+}
+
+.subNavLegalItem{
+    font-size: 1.3rem;
+    color: var(--mainGray);
+    text-decoration: none;
+    line-height: 200%;
+}
+
+.subNavItem{
+    color: var(--mainGray);
+    font-size: 3rem;
+    text-decoration: none;
+    line-height: 150%;
+}
+
+.subNavCloseButton{
+    position: absolute;
+    bottom: 15px;
+    right: 10%;
+    z-index: 400;
+}
+
+
+@media screen and (min-width: 769px){
+
+    .subNavSectionInner{
+        width: 100%;
+        max-width: 1200px;
+    }
+    .subNavCloseButton{
+        top: 30px;
+        right: 30%
+
+
+    }
+}
+

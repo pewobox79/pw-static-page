@@ -1,15 +1,36 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import {NavLink} from 'react-router-dom'
 import styles from '../../styling/Navigation.module.css'
+import NavBurger from "./NavBurger.jsx";
+import SubNavigationSection from "./SubNavigationSection.jsx";
 
 
-export default function Navigation(){
-    return(
-        <nav className={styles.mainNavigation}>
+export default function Navigation() {
 
-            <Link className={styles.navLink} to="/">Home</Link>
-            <Link className={styles.navLink} to="/contact">Hire Me</Link>
-           <Link className={styles.navLink} to="/imprint">Imprint</Link>
-        </nav>
+    const [subNavOpen, setSubNavOpen] = useState(false)
+    console.log("subnav state",subNavOpen)
+    let activeStyle = {
+        color: "white",
+        background: "#1ABC9C",
+        outline: "1px solid #1ABC9C"
+    };
+
+
+    return (
+        <>
+            <nav className={styles.mainNavigation}>
+                <NavLink className={styles.navLink} style={({isActive}) =>
+                    isActive ? activeStyle : undefined
+                } to="/">Home</NavLink>
+                <NavLink className={styles.navLink} style={({isActive}) =>
+                    isActive ? activeStyle : undefined
+                } to="/aboutme">About Me</NavLink>
+                <NavLink className={styles.navLink} style={({isActive}) =>
+                    isActive ? activeStyle : undefined
+                } to="/contact">Hire</NavLink>
+                <NavBurger subNavOpen={subNavOpen} setSubNavOpen={setSubNavOpen}/>
+            </nav>
+            <SubNavigationSection subNavOpen={subNavOpen} setSubNavOpen={setSubNavOpen}/>
+        </>
     )
 }

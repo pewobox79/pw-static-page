@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '../styling/Footer.module.css'
+import FooterNavigation from "./Navigation.jsx/FooterNavigation.jsx";
+import HorizontalLine from "./assetsComponents/HorizontalLine.jsx";
 
 export default function Footer(){
 
@@ -7,8 +9,8 @@ export default function Footer(){
 
     return(
         <footer id={styles.mainFooter}>
+           <FooterNavigation/>
             <p> &#169; {date.getFullYear()} Peter Wolf. All Rights Reserved.</p>
-           
         </footer>
     )
 }

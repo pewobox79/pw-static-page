@@ -1,0 +1,9 @@
+.headerContainer{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--mainBodyColor);
+    z-index: 200;
+}

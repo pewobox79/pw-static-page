@@ -1,0 +1,30 @@
+.defaultButton{
+    width: 80px;
+    height: auto;
+    background: var(--mainGreen);
+    color: var(--mainBodyColor);
+    border-radius: 30px;
+    border: 1px solid var(--mainBodyColor);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.defaultButton:hover{
+    color: var(--mainGreen);
+    background: var(--mainBodyColor);
+    border: 1px solid var(--mainGreen);
+}
+
+@media screen and (min-width: 768px){
+
+    .defaultButton{
+        width: 100px;
+        padding: 20px 30px;
+        font-size: 1.5rem;
+    }
+
+
+}

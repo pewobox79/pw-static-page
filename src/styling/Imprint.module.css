@@ -1,4 +1,4 @@
-.impressum{
+.impressum, .cookies{
 
     height: auto;
     width: 80%;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 850px) {
-    .impressum{
+    .impressum, .cookies{
         max-width: 50%
     }
 }
