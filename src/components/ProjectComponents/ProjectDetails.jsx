@@ -9,21 +9,27 @@ import Head from "../assetsComponents/Head.jsx";
 import {ProjectController} from "../../../apis/controller/projectController.js";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import {useEffect, useState} from "react";
+import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 
 export default function ProjectDetails(props) {
 
     const {id, title} = useParams();
     const [allProjects, setAllProjects] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
-    useEffect(()=>{
+    useEffect(() => {
+        setIsLoading(true)
         const projectData = getDataFromBackend("projectlist").then(res => setAllProjects(res))
-    },[])
+        setIsLoading(false)
+    }, [])
+
+
+    if (isLoading) {
+        return <SpinnerComponent/>
+    }
 
     const projectDetails = new ProjectController(allProjects, "English", id)
-
     const selectedProject = projectDetails.getSingleProject()
-
-
     return (
         <>
             <Head
@@ -40,7 +46,7 @@ export default function ProjectDetails(props) {
             />
             <div className={style.projectMainContainer}>
                 <div className={style.projectHeaderSectionInner}>
-                <BackButton ctaTitle={'back to projectlist'} />
+                    <BackButton ctaTitle={'back to projectlist'}/>
                 </div>
                 <ProjectHeader {...selectedProject} />
 
