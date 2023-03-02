@@ -13,7 +13,7 @@ export default function EducationContainer() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Origin': 'https://webdeveloper-peterwolf.com'
+                'Origin': 'https://www.webdeveloper-peterwolf.com'
             },
         };
 
