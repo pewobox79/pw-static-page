@@ -61,4 +61,15 @@ export class PersonalDataController {
         return personalDescription
 
     }
+
+    getExpertCV(){
+        let expertCV
+        this.data?.map((item)=>{
+            if(item.langcode === this.language){
+                expertCV = item.field_cv_to_download
+            }
+        })
+
+        return expertCV
+    }
 }

@@ -5,6 +5,8 @@
 
 
 }
+
+
 .headerSectionInner{
     width: 90%;
     display: flex;
@@ -242,6 +244,10 @@
     border: 1px solid var(--mainGreen)
 }
 
+.downloadSection{
+    padding: 30px;
+    min-height: 400px
+}
 
 @media screen and (min-width: 769px) {
 

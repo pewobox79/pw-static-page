@@ -3,7 +3,7 @@ import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import style from '../../styling/BasicPage.module.css'
 
 
-const BasicPage =({pageData, apiString})=>{
+const BasicPage =({pageData, apiString, title, description})=>{
 
     const [basicPageContent, setBasicPageContent] = useState()
     const [languageCode, setLanguageCode] = useState("English")

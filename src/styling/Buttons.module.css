@@ -18,6 +18,37 @@
     border: 1px solid var(--mainGreen);
 }
 
+a > .downloadButton{
+    text-decoration: none;
+}
+.downloadButton{
+    background-color: var(--mainGreen);
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto
+
+}
+
+
+
+.downloadIcon{
+    color: var(--mainBodyColor)
+}
+
+
+
+.downloadButton > h4 {
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--mainBodyColor);
+    font-size: 1.2rem
+}
+
 @media screen and (min-width: 768px){
 
     .defaultButton{
