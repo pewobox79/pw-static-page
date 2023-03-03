@@ -14,6 +14,7 @@ import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 export default function ProjectDetails(props) {
 
     const {id, title} = useParams();
+    console.log(id)
     const [allProjects, setAllProjects] = useState()
     const [isLoading, setIsLoading] = useState(false)
 

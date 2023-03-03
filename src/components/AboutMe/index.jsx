@@ -9,14 +9,19 @@ import ServiceSection from "./ServiceComponents/ServiceSection.jsx";
 import TestimonialSection from "./TestimonalComponents/TestimonialSection.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
-
+import DownloadButton from "../assetsComponents/Buttons/DownloadButton.jsx";
+import {PersonalDataController} from "../../../apis/controller/dataController.js";
+import style from '../../styling/AboutMe.module.css'
 
 const AboutMe = () => {
+
+
     const [aboutMeData, setAboutMeData] = useState([])
     const [loading, setLoading] =useState(false)
 
-
-
+    const expertData = new PersonalDataController(aboutMeData, "English")
+    const cVDataToDownload = expertData.getExpertCV()
+    console.log("cv",cVDataToDownload)
 useEffect(()=>{
     setLoading(true)
     const data = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
@@ -43,7 +48,10 @@ setLoading(false)
             <ServiceSection/>
             <HeaderText title={"Some client feedback"} variant={"h2"} align={"center"} margin={"0"}/>
             <TestimonialSection/>
-
+            <div className={style.downloadSection}>
+            <HeaderText title={"Downloads"} variant={"h2"} align={"center"} margin={"0"}/>
+            <DownloadButton downloadData={cVDataToDownload} buttonText={"CV"}/>
+            </div>
 
         </>)
 }
