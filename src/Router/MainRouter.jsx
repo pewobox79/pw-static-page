@@ -23,7 +23,7 @@ const router = createBrowserRouter(
                 <Route path="contact" element={<Contact/>}/>
                 <Route path="courses" element={<Course/>}/>
                 <Route path="webdev-blog" element={<BlogOverview/>}/>
-                {/*<Route path="projects/" element={<ProjectsOverview/>}/>*/}
+                <Route path="projects/" element={<ProjectsOverview/>}/>
                 <Route path="partner/" element={<PartnerOverview/>}/>
                 <Route path="dataprotection/" element={<BasicPage pageData={"dataprotection"} apiString={"legaldata"}/>}/>
                 <Route path="imprint" element={<BasicPage pageData={"imprint"} apiString={"legaldata"}/>}/>
