@@ -30,7 +30,7 @@ export default function CardItem({headerImage, description, title, uuid, courseU
                 courseUrl={courseUrl}
                 partner={partnerName}
                 buttonTitle={buttonTitleText}
-                infoText={`You will be redirected to ${courseUrl} by press the button below!`}
+                infoText={`You will be redirected to ${courseUrl} by pressing the button below!`}
             />
         </Card>
     );
