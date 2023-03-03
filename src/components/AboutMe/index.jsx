@@ -17,20 +17,20 @@ const AboutMe = () => {
 
 
     const [aboutMeData, setAboutMeData] = useState([])
-    const [loading, setLoading] =useState(false)
+    const [loading, setLoading] = useState(false)
 
     const expertData = new PersonalDataController(aboutMeData, "English")
     const cVDataToDownload = expertData.getExpertCV()
-    console.log("cv",cVDataToDownload)
-useEffect(()=>{
-    setLoading(true)
-    const data = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
-setLoading(false)
 
-}, [])
+    useEffect(() => {
+        setLoading(true)
+        const data = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
+        setLoading(false)
 
-    if(loading){
-        return(<SpinnerComponent/>)
+    }, [])
+
+    if (loading) {
+        return (<SpinnerComponent/>)
     }
     return (
         <>
@@ -49,8 +49,8 @@ setLoading(false)
             <HeaderText title={"Some client feedback"} variant={"h2"} align={"center"} margin={"0"}/>
             <TestimonialSection/>
             <div className={style.downloadSection}>
-            <HeaderText title={"Downloads"} variant={"h2"} align={"center"} margin={"0"}/>
-            <DownloadButton downloadData={cVDataToDownload} buttonText={"CV"}/>
+                <HeaderText title={"Downloads"} variant={"h2"} align={"center"} margin={"0"}/>
+                <DownloadButton downloadData={cVDataToDownload} buttonText={"CV"}/>
             </div>
 
         </>)

@@ -8,7 +8,6 @@ import SubNavigationSection from "./SubNavigationSection.jsx";
 export default function Navigation() {
 
     const [subNavOpen, setSubNavOpen] = useState(false)
-    console.log("subnav state",subNavOpen)
     let activeStyle = {
         color: "white",
         background: "#1ABC9C",

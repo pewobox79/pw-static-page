@@ -5,7 +5,7 @@ function LanguageContainer({ languageData }) {
     const languageList = languageData?.split(' ');
 
     const languageItems = languageList?.map((language, index) => {
-        console.log(language);
+
         return (
             <LanguageItem
                 key={index}

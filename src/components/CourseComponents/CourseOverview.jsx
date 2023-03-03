@@ -16,7 +16,7 @@ export default function Course() {
     const courseData = getDataFromBackend("courselist").then(res => setCourses(res))
     },[])
     const courseItems = courses?.map((courseItem) => {
-        console.log(courseItem);
+
         //TODO dynamic language switcher values
             return (
                 <CardItem

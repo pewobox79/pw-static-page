@@ -4,7 +4,7 @@ import HeaderText from "../assetsComponents/HeaderText.jsx";
 
 export default function ProjectScreenShots({imageList, projectName}) {
     const arrayOfImages = imageList?.split(', ');
-    console.log(arrayOfImages);
+
     //TODO alt attributes update
     const imageListItems = arrayOfImages?.map((item) => {
         const imageLink = 'https://pewobox.com/' + item;

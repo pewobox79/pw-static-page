@@ -12,7 +12,7 @@ export default function BlogOverview() {
         const articleData = getDataFromBackend("articlelist").then(res => setArticle(res))
     },[])
     const ArticleItems = article?.map((articleItem) => {
-        console.log("article",articleItem)
+
         //TODO dynamic language switcher values
         return (
             <CardItem

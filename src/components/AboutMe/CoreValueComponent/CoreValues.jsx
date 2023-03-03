@@ -13,9 +13,9 @@ import curiosityIcon from '../../../assets/icons/corevalues/learning.png'
 
 
 export default function CoreValues(props) {
-    console.log('core values', props);
+
     const coreValueArray = props.field_core_values?.split(',');
-    console.log(coreValueArray);
+
 
     const coreValueIcons = {
         authenticity: authenticityIcon,

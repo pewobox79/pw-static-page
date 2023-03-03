@@ -20,7 +20,7 @@ export default function EducationContainer() {
         const dataFetch = fetch(URL, requestOptions)
             .then((data) => data.json())
             .then((response) => {
-                console.log("education", response)
+
                 setEducation(response)});
 
     }, []);

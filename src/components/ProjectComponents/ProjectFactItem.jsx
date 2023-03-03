@@ -2,6 +2,7 @@ import style from '../../styling/ProjectDetails.module.css';
 import ModalContainer from '../assetsComponents/Modal/ModalContainer';
 import ModalOpenButton from '../assetsComponents/Modal/ModalOpenButton';
 import { useState } from 'react';
+import {DefaultButton} from "../assetsComponents/Buttons/DefaultButton.jsx";
 
 
 
@@ -20,13 +21,13 @@ export default function ProjectFactItem({client, website, industry}) {
             <div className={style.projectFactItemWrapper}>
                 <div className={style.factsType}>Website:</div>
                 <div>
-                    {website && (
+                    {website ?
                         <ModalOpenButton
                             openModal={openModal}
                             setOpenModal={setOpenModal}
                             buttonTitle={website}
-                        />
-                    )}
+                        /> : <DefaultButton href={"#"} title={"No Source"}/>
+                    }
                 </div>
             </div>
             <ModalContainer

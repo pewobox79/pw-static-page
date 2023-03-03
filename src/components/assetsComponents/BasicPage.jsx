@@ -13,10 +13,10 @@ const BasicPage =({pageData, apiString, title, description})=>{
 
     },[])
 
-    console.log("data", basicPageContent)
+
     const UserSelectedBasicPageContent = basicPageContent?.map((basicPageContent)=>{
         if(basicPageContent.langcode === languageCode){
-            console.log("after language", basicPageContent)
+
             if(basicPageContent.title.replace(/\s/g, '').toLowerCase() === pageData.toLowerCase()){
                 return(
                     <div key={basicPageContent.uuid} className={style.basicPageWrapper}>
