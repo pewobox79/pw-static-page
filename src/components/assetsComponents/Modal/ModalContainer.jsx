@@ -21,10 +21,10 @@ export default function ModalContainer({openModal, setOpenModal, externalLink, m
                 >
                     X
                 </button>
-                <Typography id='modal-modal-title' variant='h6' component='h2'>
+                <Typography id='modal-modal-title' variant='h6' component='h2' sx={{fontWeight: "bold"}}>
                     {modalTitle}
                 </Typography>
-                <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+                <Typography id='modal-modal-description' display={"block"} sx={{ mt: 2, wordWrap: "break-word", whiteSpace: "normal" }}>
                     {modalBody}
                 </Typography>
                 {externalLink ? (

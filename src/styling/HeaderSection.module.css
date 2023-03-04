@@ -16,6 +16,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 90%;
+    margin: auto;
 }
 
 .headerContent h1{

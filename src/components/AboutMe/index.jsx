@@ -21,6 +21,7 @@ const AboutMe = () => {
 
     const expertData = new PersonalDataController(aboutMeData, "English")
     const cVDataToDownload = expertData.getExpertCV()
+    console.log(cVDataToDownload)
 
     useEffect(() => {
         setLoading(true)
