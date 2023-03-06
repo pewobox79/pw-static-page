@@ -17,6 +17,8 @@ export default function ProjectDetails(props) {
     const [allProjects, setAllProjects] = useState()
     const [isLoading, setIsLoading] = useState(false)
 
+    const projectDetails = new ProjectController(allProjects, "English", id)
+
     useEffect(() => {
         setIsLoading(true)
         const projectData = getDataFromBackend("projectlist").then(res => setAllProjects(res))
@@ -28,8 +30,8 @@ export default function ProjectDetails(props) {
         return <SpinnerComponent/>
     }
 
-    const projectDetails = new ProjectController(allProjects, "English", id)
-    const selectedProject = projectDetails.getSingleProject()
+    const selectedProject = projectDetails.getSingleProject();
+
     return (
         <>
             <Head
@@ -43,6 +45,8 @@ export default function ProjectDetails(props) {
                         ? selectedProject?.field_meta_description
                         : selectedProject?.field_description
                 }
+                image={""}
+
             />
             <div className={style.projectMainContainer}>
                 <div className={style.projectHeaderSectionInner}>
