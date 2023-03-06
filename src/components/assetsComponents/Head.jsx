@@ -11,7 +11,7 @@ export default function Head({title, description, keywords, image}) {
             <meta property="og:title" content={title}/>
             <meta property="og:description" content={description}/>
             <meta property="og:url" content={window.location.href}/>
-            <meta property="og:image" content={image}/>
+            <meta name="image" property="og:image" content={image}/>
 
         </Helmet>
     )
