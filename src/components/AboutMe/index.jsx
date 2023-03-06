@@ -14,14 +14,12 @@ import {PersonalDataController} from "../../../apis/controller/dataController.js
 import style from '../../styling/AboutMe.module.css'
 
 const AboutMe = () => {
-
-
     const [aboutMeData, setAboutMeData] = useState([])
     const [loading, setLoading] = useState(false)
 
     const expertData = new PersonalDataController(aboutMeData, "English")
     const cVDataToDownload = expertData.getExpertCV()
-    console.log(cVDataToDownload)
+    const imageUrl = expertData.getExpertImage()
 
     useEffect(() => {
         setLoading(true)
@@ -36,8 +34,10 @@ const AboutMe = () => {
     return (
         <>
             <Head title={"About Peter Wolf the web developer & advisor!"}
-                  descr={"Get to know peter wolf better! He is a Freelance Web Developer and Advisor to "}
-                  keywords={"CoreValues, freelancer, web developer, techstack"}/>
+                  description={"Get to know peter wolf better! He is a Freelance Web Developer and Advisor to "}
+                  keywords={"CoreValues, freelancer, web developer, techstack"}
+                  image={imageUrl}
+            />
             <AboutMeHeader personalData={aboutMeData}/>
             <HeaderText title={"Some relevant skills"} variant={"h2"} align={"center"} margin={"0"}/>
             <SkillExperienceSection {...aboutMeData[1]}/>
