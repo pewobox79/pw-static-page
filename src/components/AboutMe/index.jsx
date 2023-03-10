@@ -12,21 +12,18 @@ import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 import DownloadButton from "../assetsComponents/Buttons/DownloadButton.jsx";
 import {PersonalDataController} from "../../../apis/controller/dataController.js";
 import style from '../../styling/AboutMe.module.css'
+import {useFetch} from "../../hooks/useFetch.js";
 
 const AboutMe = () => {
-    const [aboutMeData, setAboutMeData] = useState([])
+
     const [loading, setLoading] = useState(false)
+
+    const aboutMeData = useFetch("expertlist");
 
     const expertData = new PersonalDataController(aboutMeData, "English")
     const cVDataToDownload = expertData.getExpertCV()
     const imageUrl = expertData.getExpertImage()
 
-    useEffect(() => {
-        setLoading(true)
-        const data = getDataFromBackend("expertlist").then(res => setAboutMeData(res))
-        setLoading(false)
-
-    }, [])
 
     if (loading) {
         return (<SpinnerComponent/>)
