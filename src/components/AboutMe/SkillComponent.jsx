@@ -4,24 +4,9 @@ import SkillItem from "./SkillItem.jsx";
 import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 /*const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL*/
 const backendURL = "https://pewobox.com/api/"
-function SkillComponent() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [skillsData, setSkillsData] = useState([]);
+function SkillComponent({title, data, isLoading}) {
 
-    useEffect(()=>{
-        const requestOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-        const dataFetch = fetch(`${backendURL}listofskills`,requestOptions )
-            .then(data => data.json())
-            .then(response => setSkillsData(response))
-    }, [])
-
-
-    const skillList = skillsData?.map((skill) => {
+    const skillList = data?.map((skill) => {
         return (
             <SkillItem
                 key={skill.uuid}
@@ -34,6 +19,7 @@ function SkillComponent() {
 
     return (
         <div className={style.skillContainer}>
+            <h2>{title}</h2>
             <div className={style.skillListingBox}>
                 {isLoading ? <SpinnerComponent /> : skillList}
             </div>

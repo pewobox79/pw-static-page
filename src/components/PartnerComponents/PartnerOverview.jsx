@@ -10,7 +10,7 @@ export default function PartnerOverview() {
     const [partner, setPartner] = useState()
 
     useEffect(()=>{
-        const partnerData = getDataFromBackend("partnerlist").then(res => setPartner(res))
+        getDataFromBackend("partnerlist").then(res => setPartner(res))
     },[])
     const PartnerItems = partner?.map((partnerItem) => {
 
