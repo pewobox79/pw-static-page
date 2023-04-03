@@ -2,7 +2,5 @@
 const backendURL = "https://pewobox.com/api/"
 export async function getDataFromBackend(searchString){
    const response =await fetch(backendURL+searchString)
-    const data = await response.json()
-
-    return data
+    return await response.json()
 }

@@ -36,7 +36,7 @@ const AboutMe = () => {
                   image={imageUrl}
             />
             <AboutMeHeader personalData={aboutMeData}/>
-            <HeaderText title={"Some relevant skills"} variant={"h2"} align={"center"} margin={"0"}/>
+            <HeaderText title={"Skills and Technologies"} variant={"h2"} align={"center"} margin={"0"}/>
             <SkillExperienceSection {...aboutMeData[1]}/>
             <HeaderText title={"Core values"} align={"center"} margin={"0"} variant={"h2"}/>
             <CoreValues {...aboutMeData[1]}/>

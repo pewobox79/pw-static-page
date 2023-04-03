@@ -85,6 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
 
 }
@@ -289,7 +290,8 @@
 
         flex-direction: row;
         width: 100%;
-        max-width: 1200px
+        max-width: 1200px;
+        flex-wrap: wrap;
 
 
     }
@@ -298,6 +300,7 @@
     .skillContainer,
     .languageContainer {
         width: 50%;
+        min-width: 350px;
         margin-top: 0
 
     }
