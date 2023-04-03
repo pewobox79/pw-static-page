@@ -42,7 +42,8 @@ function SkillExperienceSection(props) {
             <SkillComponent title={"Tools | Platforms"} data={tools} isLoading={isLoading}/>
             <SkillComponent title={"Diverse Technologies"} data={diverseTec} isLoading={isLoading}/>
             <SkillComponent title={"Content Management Systems"} data={cms} isLoading={isLoading}/>
-            <SkillComponent title={"Languages"} data={languages} isLoading={isLoading}/>
+            <SkillComponent title={"Languages | Communication"} data={languages} isLoading={isLoading}/>
+
 
             </div>
         </section>
