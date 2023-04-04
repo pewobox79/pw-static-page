@@ -6,7 +6,8 @@ import {DefaultButton} from "../assetsComponents/Buttons/DefaultButton.jsx";
 
 
 
-export default function ProjectFactItem({client, website, industry}) {
+export default function ProjectFactItem({client, website, industry, logo}) {
+
     const [openModal, setOpenModal] = useState(false);
     return (
         <div className={style.projectFactItems}>
@@ -40,6 +41,7 @@ export default function ProjectFactItem({client, website, industry}) {
                 externalLink={website}
                 clientName={client}
             />
+
         </div>
     );
 }
