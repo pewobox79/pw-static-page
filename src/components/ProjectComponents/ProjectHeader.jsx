@@ -2,12 +2,7 @@ import style from '../../styling/ProjectDetails.module.css';
 import ProjectFactItem from './ProjectFactItem';
 
 export default function ProjectHeader(props) {
-    const factsArray = [
-        props.field_industry,
-        props.field_projekt_url,
-        props.field_related_to,
-    ];
-
+    console.log(props)
     return (
         <section className={style.projectHeaderSection}>
             <div className={style.projectHeaderSectionInner}>
@@ -15,7 +10,9 @@ export default function ProjectHeader(props) {
                 <h1>{props.title?.toUpperCase()}</h1>
             </div>
             <div className={style.projectDetailsContainer}>
+
                 <div className={style.projectDescription}>
+                    <a href={props.field_projekt_url} target={"_blank"}><img src={"https://pewobox.com"+props.field_company_logo} alt={"logo"}/></a>
                     <p>{props.field_description}</p>
                 </div>
                 <div className={style.projectFacts}>
