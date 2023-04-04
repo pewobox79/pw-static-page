@@ -146,10 +146,29 @@
     width: 100%;
     margin: auto;
     font-size: 1.2rem;
-    text-align: center;
+    text-align: left;
     line-height: 30px;
+    padding-top: 30px
 }
 
+.responsibilitiesTextBlock ul{
+    list-style: none;
+    width: 90%;
+    margin: auto
+}
+
+.responsibilitiesTextBlock ul li{
+    padding: 8px 0
+}
+.responsibilitiesTextBlock ul li::before{
+    content: "\2022";
+    color: var(--mainGreen);
+    font-weight: bold;
+    font-size: 2rem;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
 .screenShotSection{
     display: none;
 
@@ -235,6 +254,17 @@
     .responsibilitiesTextBlock{
         font-size: 1rem
     }
+
+    .responsibilitiesTextBlock ul{
+        list-style: none;
+        width: 50%;
+        margin: auto
+    }
+
+    .responsibilitiesTextBlock ul li{
+        padding: 2px 0
+    }
+
 
     .techStackItemsContainer{
         min-width: 80%;

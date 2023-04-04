@@ -55,7 +55,7 @@ export default function ProjectDetails(props) {
                 <ProjectHeader {...selectedProject} />
 
                 <ProjectResponsibility
-                    responsibility={selectedProject?.field_my_responsibility}
+                    responsibility={selectedProject?.field_responsibility_point}
                 />
                 <ProjectTechStack
                     techStack={selectedProject?.field_provided_service}
