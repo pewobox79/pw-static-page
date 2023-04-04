@@ -12,8 +12,12 @@ export default function ProjectHeader(props) {
             <div className={style.projectDetailsContainer}>
 
                 <div className={style.projectDescription}>
-                    <a href={props.field_projekt_url} target={"_blank"}><img src={"https://pewobox.com"+props.field_company_logo} alt={"logo"}/></a>
-                    <p>{props.field_description}</p>
+                    {props.field_company_logo ?
+                    <a href={props.field_projekt_url} target={"_blank"}>
+                        <img src={"https://pewobox.com"+props.field_company_logo} alt={"logo"}/>
+                    </a>
+                    :null}
+                        <p>{props.field_description}</p>
                 </div>
                 <div className={style.projectFacts}>
                     <ProjectFactItem
