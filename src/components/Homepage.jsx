@@ -45,7 +45,12 @@ export default function Homepage() {
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
             {demoMessage &&
-             <ModalContainer openModal={demoMessage} setOpenModal={setDemoMessage} modalTitle={"Demo on Desktop available"} modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device!"}/>}
+             <ModalContainer
+                 openModal={demoMessage}
+                 setOpenModal={setDemoMessage}
+                 modalTitle={"Demo on Desktop available!"}
+                 modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device! So please open my website on your desktop and enjoy the new feature!"}
+             />}
         </div>
     )
 }
