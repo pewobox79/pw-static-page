@@ -8,6 +8,7 @@ import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
 export default function Homepage() {
 
     const [demoMessage, setDemoMessage] = useState(false);
+    const [desktopMessage, setDesktopMessage] = useState(false)
     const device = navigator.userAgent;
 
     useEffect(()=>{
@@ -15,7 +16,7 @@ export default function Homepage() {
             // the user is using a mobile device, so redirect to the mobile version of the website
             setDemoMessage(true)
         }else{
-            setDemoMessage(false)
+            setDesktopMessage(true)
         }
     }, [])
 
@@ -48,6 +49,16 @@ export default function Homepage() {
                  setOpenModal={setDemoMessage}
                  modalTitle={"Demo on Desktop available!"}
                  modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device! So please open my website on your desktop and enjoy the new feature!"}
+             />}
+
+            {desktopMessage &&
+             <ModalContainer
+                 openModal={desktopMessage}
+                 setOpenModal={setDesktopMessage}
+                 modalTitle={"Checkout my new Demo Dashboard!"}
+                 modalBody={"My new feature will allow you to see some of my skills in action. You can access my Demo Dashboard for your consideration at any time. You won´t share any data with me. Enjoy it!"}
+                 internalLink={"/demo/register"}
+                 clientName={"Demo Dashboard"}
              />}
         </div>
     )
