@@ -10,7 +10,7 @@ import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
 
 export default function Homepage() {
 
-    const [demoMessage, setDemoMessage] = useState(true)
+    const [demoMessage, setDemoMessage] = useState(false)
     
     const device = navigator.userAgent;
 
@@ -44,7 +44,8 @@ export default function Homepage() {
             <div style={{textAlign: "center", paddingTop: "100px"}}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
-             <ModalContainer openModal={demoMessage} setOpenModal={setDemoMessage} modalTitle={"Demo on Desktop available"} modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device!"}/>
+            {demoMessage &&
+             <ModalContainer openModal={demoMessage} setOpenModal={setDemoMessage} modalTitle={"Demo on Desktop available"} modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device!"}/>}
         </div>
     )
 }
