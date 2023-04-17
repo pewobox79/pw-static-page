@@ -45,6 +45,10 @@
     line-height: 150%;
 }
 
+.subNavItemDemo {
+    display: none;
+}
+
 .subNavCloseButton{
     position: absolute;
     bottom: 15%;
@@ -64,6 +68,14 @@
         right: 30%
 
 
+    }
+
+    .subNavItemDemo{
+        display: block;
+        color: var(--mainGray);
+        font-size: 3rem;
+        text-decoration: none;
+        line-height: 150%;
     }
 }
 

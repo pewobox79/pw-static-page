@@ -49,6 +49,42 @@ a > .downloadButton{
     font-size: 1.2rem
 }
 
+
+.formButtonStyling{
+    padding: 10px;
+    min-width: 150px;
+    width: auto;
+    font-size: 1.3rem;
+    background-color: var(--mainGreen);
+    outline: 0;
+    border: 1px solid var(--mainGreen);
+    margin-top: 10px;
+    border-radius: 30px;
+    color: var(--mainBodyColor);
+    cursor: pointer ;
+
+
+}
+
+.formButtonStyling:hover{
+    color: var(--mainGreen);
+    background-color: var(--mainBodyColor);
+}
+
+.formButtonStylingDeactive{
+    padding: 10px;
+    min-width: 150px;
+    width: auto;
+    font-size: 1.3rem;
+    background-color: var(--mainGray);
+    opacity: 0.5;
+    color: var(--mainBodyColor);
+    border: 1px solid var(--mainGray);
+    margin-top: 10px;
+    border-radius: 30px;
+    cursor: not-allowed;
+}
+
 @media screen and (min-width: 768px){
 
     .defaultButton{

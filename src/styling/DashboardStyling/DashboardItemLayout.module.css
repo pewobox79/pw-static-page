@@ -1,0 +1,13 @@
+.sectionWrapper{
+    min-height: 200px;
+    height: auto;
+    outline: 1px solid green
+
+}
+
+.sectionInner{
+    width: 90%;
+    margin:auto
+}
+
+

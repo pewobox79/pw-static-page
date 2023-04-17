@@ -1,0 +1,32 @@
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    max-width: 200px;
+    min-width: 100px;
+    height: 100vh;
+    background-color: #1ABC9C;
+}
+
+
+.sidenav > aside >ul {
+    margin: 0;
+    padding: 20px 10px;
+}
+
+.sidenav > aside >ul >li{
+    list-style: none;
+    text-align: center;
+}
+
+.sidenav > aside >ul >li > a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: black
+}
+
+
+.sidenav > aside >ul >li > a:hover{
+    color: var(--mainBodyColor)
+}
+

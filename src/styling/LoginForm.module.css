@@ -1,0 +1,44 @@
+.loginForm{
+    width: 95%;
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.labelStyling{
+    color: var(--mainGreen);
+    font-size: 2rem;
+
+}
+.inputStyling{
+    width: 90%;
+    max-width: 350px;
+    padding: 10px 3px;
+    outline: 0;
+    border: 1px solid var(--mainGray);
+    border-radius: 10px;
+    color: var(--mainGray);
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px){
+
+   .loginForm{
+       max-width: 300px;
+       min-height: 200px
+   }
+
+    .labelStyling{
+        font-size: 1.5rem;
+
+    }
+
+    .inputStyling{
+        padding: 7px 3px;
+        font-size: 1rem
+    }
+
+}

@@ -1,7 +1,7 @@
 import style from '../../../styling/Modal.module.css';
 import { Box, Modal, Typography } from '@mui/material';
 
-export default function ModalContainer({openModal, setOpenModal, externalLink, modalTitle, modalBody, clientName}) {
+export default function ModalContainer({openModal, setOpenModal, externalLink, internalLink, modalTitle, modalBody, clientName}) {
     const handleClose = () => {
         setOpenModal(false);
     };
@@ -27,11 +27,11 @@ export default function ModalContainer({openModal, setOpenModal, externalLink, m
                 <Typography id='modal-modal-description' display={"block"} sx={{ mt: 2, wordWrap: "break-word", whiteSpace: "normal" }}>
                     {modalBody}
                 </Typography>
-                {externalLink ? (
+                {externalLink || internalLink ? (
 
-                        <a href={externalLink}
+                        <a href={externalLink || internalLink}
                             onClick={handleClose}
-                            target={'_blank'}
+                            target={internalLink ? `_self`: `_blank`}
                             className={style.goToButton}
                             style={{ marginTop: '60px' }}
                         >
@@ -39,6 +39,7 @@ export default function ModalContainer({openModal, setOpenModal, externalLink, m
                         </a>
 
                 ) : null}
+
             </Box>
         </Modal>
     );
