@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import styles from '../../styling/Navigation.module.css'
 import NavBurger from "./NavBurger.jsx";
 import SubNavigationSection from "./SubNavigationSection.jsx";
+import DemoAccess from "./DemoAccess.jsx";
 
 
 export default function Navigation() {

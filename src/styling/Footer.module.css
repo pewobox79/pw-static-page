@@ -19,6 +19,9 @@
 .footerNavigation{
     display: none}
 
+.demoSection{
+    display: none;
+}
 
 
 @media screen and (min-width: 850px) {
@@ -47,5 +50,8 @@
         text-decoration: none;
     }
 
-    
+    .demoSection{
+        display: block;
+        text-align: center;
+    }
 }

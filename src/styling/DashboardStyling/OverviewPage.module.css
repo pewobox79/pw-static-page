@@ -1,0 +1,12 @@
+.overviewPageWrapper{
+    width: 90%;
+    margin: auto
+}
+
+
+@media screen and (min-width: 768px){
+    .overviewPageWrapper{
+        width: 100%;
+        padding: 0 0 0 20px
+    }
+}

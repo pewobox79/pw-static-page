@@ -1,0 +1,5 @@
+.dashboardWrapper{
+    display: flex;
+    flex-direction: row;
+
+}
