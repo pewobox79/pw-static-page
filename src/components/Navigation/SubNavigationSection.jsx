@@ -41,7 +41,7 @@ const SubNavigationSection = ({subNavOpen, setSubNavOpen}) => {
 
                         <NavLink className={style.subNavItem} to="/projects"
                                  onClick={() => setSubNavOpen(false)}>Projects</NavLink>
-                        <NavLink className={style.subNavItemDemo} to="/demo/login"
+                        <NavLink className={style.subNavItemDemo} to="/demo/register"
                                  onClick={() => setSubNavOpen(false)}>Demo</NavLink>
 
                     </ul>
