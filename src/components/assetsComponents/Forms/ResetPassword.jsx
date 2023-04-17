@@ -61,9 +61,9 @@ const ResetPassword=()=>{
                         handleClick={handleSubmit}
                     />
                 </form>
-                <div style={{paddingTop: "20px"}}>
-                    <Link to={"/demo/register"}>Register to use the demo</Link>
-                </div>
+            {resetMessage && <div style={{paddingTop: "20px"}}>
+                    <Link to={"/demo/login"}>Back to login page</Link>
+                </div>}
 
         </FormLayout>
     )

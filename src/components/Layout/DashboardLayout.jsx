@@ -29,9 +29,6 @@ const DashboardLayout = ({children}) => {
                     {children}
                     <Outlet/>
                 </div>
-                <footer>
-                    <h1>dashboard layout footer</h1>
-                </footer>
             </> : <PageLayout><h2 style={{paddingBottom: "20px"}}>Please login first, to get access to the demo
                 dashboard</h2><DefaultButton title={"Go to login"} href={"/demo/login"}/></PageLayout>
             }
