@@ -7,7 +7,7 @@ export const useFetch = (searchString) => {
     const [fetchedData, setFetchedData] = useState([]);
 
     useEffect(() => {
-        console.log(url)
+
         fetch(url)
             .then(res => res.json())
             .then(data => setFetchedData(data))

@@ -2,7 +2,7 @@ import style from '../../styling/ProjectDetails.module.css';
 import ProjectFactItem from './ProjectFactItem';
 
 export default function ProjectHeader(props) {
-    console.log(props)
+
     return (
         <section className={style.projectHeaderSection}>
             <div className={style.projectHeaderSectionInner}>

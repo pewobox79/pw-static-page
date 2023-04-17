@@ -1,23 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import Logo from '../assets/peter-wolf-web-developer-advisor_s.png';
-import styling from '../styling/Modal.module.css'
-
 import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
-import {Link} from "react-router-dom";
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
 
 export default function Homepage() {
 
-    const [demoMessage, setDemoMessage] = useState(false)
-    
+    const [demoMessage, setDemoMessage] = useState(false);
     const device = navigator.userAgent;
 
     useEffect(()=>{
         if (device.match(/Android/i) || device.match(/webOS/i) || device.match(/iPhone/i) || device.match(/iPad/i) || device.match(/iPod/i) || device.match(/BlackBerry/i) || device.match(/Windows Phone/i)) {
             // the user is using a mobile device, so redirect to the mobile version of the website
             setDemoMessage(true)
+        }else{
+            setDemoMessage(false)
         }
     }, [])
 

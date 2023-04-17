@@ -4,6 +4,7 @@ import FormButton from "../Buttons/FormButton.jsx";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 import {resetPassword} from "../../../lib/FormHandler.js";
+import {Alert} from "@mui/material";
 
 const ResetPassword=()=>{
 
@@ -13,7 +14,6 @@ const ResetPassword=()=>{
         password: ""
 
     })
-    console.log(newPassword)
 
     function handlePasswordChange(e){
         setNewPassword({...newPassword, [e.target.name]: e.target.value})
@@ -44,7 +44,7 @@ const ResetPassword=()=>{
         <FormLayout>
 
                 <h1>Reset Password</h1>
-                {resetMessage ? `<div>message reset successfull</div>` : null}
+                {resetMessage && <Alert variant={"filled"} severity={"success"}>password reset was successful</Alert>}
                 <form className={styles.loginForm}>
                     <label className={styles.labelStyling} htmlFor={"password"}>New Password</label><br/>
                     <input id="password" type="password" name="password" className={styles.inputStyling}
@@ -55,7 +55,7 @@ const ResetPassword=()=>{
                            inputMode={"text"} className={styles.inputStyling}/>
                     <br/>
                     <FormButton
-                        title={"Login"}
+                        title={"Reset"}
                         status={buttonStatus}
                         type={"submit"}
                         handleClick={handleSubmit}

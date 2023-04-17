@@ -79,8 +79,9 @@ const LoginForm = () => {
                         handleClick={handleSubmit}
                     />
                 </form>
-                <div style={{paddingTop: "20px"}}>
-                    <Link to={"/demo/register"}>Register to use the demo</Link>
+                <div style={{paddingTop: "20px", textAlign: "center"}}>
+                    <Link to={"/demo/register"}>Register to use the demo</Link><br/>
+                    <Link to={"/demo/resetPassword"}>Reset Password</Link>
                 </div>
 
                 {errorMessage && <div style={{paddingTop: "10px"}}><Alert variant="filled" severity="error">
