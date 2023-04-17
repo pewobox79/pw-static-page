@@ -6,7 +6,7 @@ import {UserContext} from "../../Layout/DashboardLayout.jsx";
 
 const DHeader =()=>{
     const userData = useContext(UserContext)
-    console.log("user",userData)
+
 
     return(
         <header className={styles.headerWrapper}>

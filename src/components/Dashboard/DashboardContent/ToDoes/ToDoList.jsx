@@ -24,7 +24,7 @@ const ToDoList =()=>{
     },[])
 
 
-console.log(limitOfTodoes)
+
 
     const ListOfToDoes = toDoes?.map((item)=>{
         if(item.id <= 10) {

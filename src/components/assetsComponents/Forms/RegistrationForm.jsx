@@ -67,7 +67,7 @@ if(userValues) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log("after hash",newUser)
+
         const hashedUser = beCryptPassword(newUser)
         localStorage.setItem("user", JSON.stringify(hashedUser))
         setNewUser(INIT_VALUES)

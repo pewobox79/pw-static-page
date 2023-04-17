@@ -9,7 +9,7 @@ const LogoutForm =()=>{
 
     const navigate = useNavigate();
     const [loggedOut, setLoggedOut]=useState(false)
-    console.log(loggedOut)
+
     function handleLogout(){
         userLogoutOnly()
         setLoggedOut(true)

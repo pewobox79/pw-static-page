@@ -4,10 +4,8 @@ import bcrypt from 'bcryptjs';
 
 export function decryptHash(){
     const localValue = localStorage.getItem("user");
-    console.log(localValue)
-
     const readableValue = hash(localValue, {encoding: 'base64'})
-    console.log("value readable",readableValue)
+
 
 }
 
@@ -40,8 +38,6 @@ export function comparePassword(userPassword, hashedPassword){
 }
 
 export function checkEmail(storedEmail, email){
-
-    console.log(storedEmail, email)
 
     let emailResponse
 
@@ -121,7 +117,7 @@ export function userLogoutWithDataDelete(){
 
 export function resetPassword(newPassword){
     const userValue = checkLocalStorage()
-    console.log(userValue)
+
 
     let salt = bcrypt.genSaltSync(10);
     let hashedPassword = bcrypt.hashSync(newPassword, salt);
