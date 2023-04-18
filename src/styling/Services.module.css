@@ -51,18 +51,17 @@
     font-weight: 600;
 }
 
-.serviceDescription{
+.serviceDescription {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--mainBodyColor);
-    width: 80%;
     padding: 10px;
     min-height: 16%;
     max-height: 20%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: var(--mainGreen);
     opacity: 0;
     transition: 1s ease-in-out;
@@ -77,6 +76,8 @@
 @media screen and (min-width: 680px) {
     .serviceSectionInner {
         flex-direction: row;
+        max-width: 1100px;
+        margin: auto;
 
     }
 
