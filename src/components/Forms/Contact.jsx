@@ -57,7 +57,7 @@ export default function Contact() {
                             <TextField className={styles.inputField} label="Your Message" multiline rows={5} name="body"
                                        onChange={handleChange}/>
                         </div>
-                        <a className={valid ? styles.requestButton : styles.requestButtonInactive} inactive href={emailHref}>Send Request</a>
+                        <a className={valid ? styles.requestButton : styles.requestButtonInactive} href={emailHref}>Send Request</a>
 
                     </Box>
 
