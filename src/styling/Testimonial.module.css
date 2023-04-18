@@ -2,17 +2,20 @@
     min-height: 350px;
     height: auto;
     width: 100%;
+
+    background-color: var(--mainLightGray);
+    padding: 50px 0;
+
+}
+.testimonialInner{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     margin: 50px 0;
     flex-wrap: wrap;
-    background-color: var(--mainLightGray);
-    padding: 50px 0;
-
 }
-
 .testimonialCard {
     width:90%;
     min-height: 140px;
@@ -102,5 +105,11 @@
 
     .testimonialQuoteText{
         font-size: .9rem;
+    }
+
+    .testimonialInner{
+        flex-direction: row;
+        max-width: 1100px;
+        margin: auto
     }
 }

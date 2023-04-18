@@ -34,11 +34,13 @@ function TestimonialSection() {
     return (
         <>
             <section className={style.testimonialSection}>
+                <div className={style.testimonialInner}>
                 {testimonialItems ? (
                     testimonialItems
                 ) : (
                     <div>I am waiting for some feedback...</div>
                 )}
+                </div>
             </section>
         </>
     );
