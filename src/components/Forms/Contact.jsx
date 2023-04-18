@@ -8,6 +8,7 @@ import Head from '../assetsComponents/Head';
 import LinkedInIcon from '../../assets/socialIcons/linkedIn_icon.png'
 import EventIcon from '@mui/icons-material/Event';
 import SectionHeader from "../assetsComponents/SectionHeader.jsx";
+import FormButton from "../assetsComponents/Buttons/FormButton.jsx";
 
 export default function Contact() {
     const email = 'pw@webdeveloper-peterwolf.com'
@@ -19,7 +20,7 @@ export default function Contact() {
 
     const [valid, setValid] = useState(false);
 
-    const emailHref = valid ? `mailto:${email}?subject=${message.subject}&body=${message.body} ` : "javascript:alert('Please fill out the form before sending...!')";
+    const emailHref = `mailto:${email}?subject=${message.subject}&body=${message.body} `;
 
     function handleChange(e) {
 
@@ -34,8 +35,8 @@ export default function Contact() {
         <section className={styles.contactSection}>
             <div className={styles.contactSectionInner}>
                 <div className={styles.formWrapper}>
-                    <Head title="Contact | Hire Peter Wolf as Web Developer"
-                          descr="Web Developer Peter Wolf | Request time availabiltiy  "
+                    <Head title="Contact | Hire Peter Wolf as Web Developer"
+                          descr="Web Developer Peter Wolf | Request time availabiltiy  "
                           keywords="web developer, availabilty, frontend development, contact form, hire me"/>
 
 
@@ -56,7 +57,7 @@ export default function Contact() {
                             <TextField className={styles.inputField} label="Your Message" multiline rows={5} name="body"
                                        onChange={handleChange}/>
                         </div>
-                        <a variant="contained" className={styles.requestButton} href={emailHref}>Send Request</a>
+                        <a className={valid ? styles.requestButton : styles.requestButtonInactive} inactive href={emailHref}>Send Request</a>
 
                     </Box>
 
