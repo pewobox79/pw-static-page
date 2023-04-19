@@ -4,11 +4,13 @@ import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
+import {getDemoInfoContent} from "../lib/DemoData.js";
 
 export default function Homepage() {
 
     const [demoMessage, setDemoMessage] = useState(false);
     const [desktopMessage, setDesktopMessage] = useState(false)
+    const [demoContent, setDemoContent] = useState();
     const device = navigator.userAgent;
 
     useEffect(()=>{
@@ -18,7 +20,11 @@ export default function Homepage() {
         }else{
             setDesktopMessage(true)
         }
-    }, [])
+
+
+        const demoData = getDemoInfoContent().then(data => setDemoContent(data))
+
+    }, [demoMessage])
 
 
     return (

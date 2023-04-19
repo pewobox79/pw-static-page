@@ -1,7 +1,21 @@
 import PageLayout from "../../Layout/PageLayout.jsx";
 import {Link} from "react-router-dom";
+import {getDemoInfoContent} from "../../../lib/DemoData.js";
+import {useEffect, useState} from "react";
 
-const ThankYouPage =()=>{
+const LoggedOutPage =()=>{
+
+    const [content, setContent]=useState();
+
+    useEffect(()=>{
+        const loggedOutContent = getDemoInfoContent()
+            .then(data => setContent(data))
+
+    },[])
+
+    console.log("data",content)
+
+
     return(
         <PageLayout>
             <h1>You have been successfully logged out!</h1>
@@ -14,4 +28,4 @@ const ThankYouPage =()=>{
     )
 }
 
-export default ThankYouPage
+export default LoggedOutPage

@@ -20,6 +20,7 @@ import ThankYouPage from "../components/assetsComponents/pages/ThankYouPage.jsx"
 import LogoutForm from "../components/assetsComponents/Forms/LogoutForm.jsx";
 import ResetPassword from "../components/assetsComponents/Forms/ResetPassword.jsx";
 import LoggedOutPage from "../components/assetsComponents/pages/LoggedOutPage.jsx";
+import CryptoOverview from "../components/Dashboard/DashboardContent/CryptoMarket/CryptoOverview.jsx";
 
 
 const router = createBrowserRouter(
@@ -48,6 +49,7 @@ const router = createBrowserRouter(
                 </Route>
                 <Route path="/demo/dashboard" element={<DashboardLayout/>}>
                     <Route index element={<OverviewPage/>}/>
+                    <Route path={"/demo/dashboard/crypto"} element={<CryptoOverview/>}/>
                 </Route>
             </Route>
     ))
