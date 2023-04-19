@@ -22,9 +22,7 @@ export default function Homepage() {
         }
 
 
-        const demoData = getDemoInfoContent().then(data => setDemoContent(data))
-
-    }, [demoMessage])
+    }, [])
 
 
     return (
