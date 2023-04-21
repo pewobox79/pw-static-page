@@ -17,13 +17,9 @@
 .sidenav > aside >ul >li{
     list-style: none;
     text-align: center;
+    padding: 10px 0
 }
 
-.sidenav > aside >ul >li > a{
-    text-decoration: none;
-    font-size: 1.1rem;
-    color: black
-}
 
 
 .sidenav > aside >ul >li > a:hover{
@@ -31,10 +27,13 @@
 }
 
 .active{
-    color: var(--mainBodyColor)
+    color: var(--mainBodyColor);
+    text-decoration: none;
+
 }
 
 .inactive{
-    color: black
+    color: black;
+    text-decoration: none;
 }
 

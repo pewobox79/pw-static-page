@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink} from "react-router-dom";
 import styles from '../../../styling/DashboardStyling/DSideNavigation.module.css'
 
@@ -12,7 +13,9 @@ const DSideNavigation =()=>{
             <aside>
                 <ul>
                     <li>
-                    <NavLink to={"/demo/dashboard"} className={({ isActive }) =>
+                    <NavLink to={"/demo/dashboard"} className={styles.inactive}>Dashboard</NavLink>
+                    </li><li>
+                    <NavLink to={"/demo/dashboard/mytasks"} className={({ isActive }) =>
                         isActive ? styles.active : styles.inactive}>My Tasks</NavLink>
                     </li>
                     <li><NavLink to={"/demo/dashboard/crypto"} className={({ isActive }) =>
