@@ -113,6 +113,11 @@
     max-width: 125px;
 }
 
+.qRCode{
+    width: 120px;
+    height: auto;
+}
+
 @media screen and (min-width: 650px){
 
     .contactSection{

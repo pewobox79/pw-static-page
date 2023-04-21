@@ -6,6 +6,7 @@ import {ButtonBase} from '@mui/material';
 import AvatarImg from '../../assets/frontend-web-developer_peterwolf.jpg';
 import Head from '../assetsComponents/Head';
 import LinkedInIcon from '../../assets/socialIcons/linkedIn_icon.png'
+import QRCode from '../../assets/images/Peter_Wolf_WebDeveloper_digitalBusinessCard.png'
 import EventIcon from '@mui/icons-material/Event';
 import SectionHeader from "../assetsComponents/SectionHeader.jsx";
 import FormButton from "../assetsComponents/Buttons/FormButton.jsx";
@@ -64,6 +65,12 @@ export default function Contact() {
 
                 </div>
                 <div className={styles.socialMediaContact}>
+                    <div className={styles.contactBox}>
+                        <SectionHeader title={"Save my Contact Details"} TitleVariant={"h4"}/>
+                        <img className={styles.qRCode} src={QRCode}
+                                                          height="100px"
+                                                          alt="Linkedin Profile Link to Peter Wolf"/>
+                    </div>
                     <div className={styles.contactBox}>
                         <SectionHeader title={"Meet me on social media"} TitleVariant={"h4"}/>
                         <a href="https://www.linkedin.com/in/frontend-developer-seo-expert-peterwolf/"
