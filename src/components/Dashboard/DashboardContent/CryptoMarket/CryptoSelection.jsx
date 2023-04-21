@@ -1,6 +1,6 @@
 import style from '../../../../styling/DashboardStyling/CryptoOverview.module.css'
 
-export function CryptoSelection({setCryptoQuery}) {
+export function CryptoSelection({setCryptoQuery, cryptoQuery}) {
 
     const cryptoCurrencyList = [
         {
@@ -44,7 +44,7 @@ export function CryptoSelection({setCryptoQuery}) {
         <div className={style.selectionWrapper}>
             <form>
                 <label className={style.labelStyle} htmlFor="crypto-currency">Choose a Currency:</label><br/>
-                <select className={style.inputButton} id="crypto-currency" name="crypto-currency" onChange={handleChange}>
+                <select className={style.inputButton} id="crypto-currency" name="crypto-currency" value={cryptoQuery} onChange={handleChange}>
                     {OptionsList}
                 </select>
                 </form>

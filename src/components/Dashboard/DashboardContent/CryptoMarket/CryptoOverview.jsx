@@ -36,9 +36,9 @@ const CryptoOverview = () => {
 
             <DashboardItemLayout>
                 <h1>{data["Meta Data"]["1. Information"]}</h1>
-                <h3>{data["Meta Data"]["3. Digital Currency Name"]}</h3>
+                <h3>Currency: {data["Meta Data"]["3. Digital Currency Name"]}</h3>
                 <CryptoDataList dataValue={data[["Time Series (Digital Currency Weekly)"]]}/>
-                <CryptoSelection setCryptoQuery={setCryptoQuery}/>
+                <CryptoSelection setCryptoQuery={setCryptoQuery} cryptoQuery={cryptoQuery}/>
             </DashboardItemLayout>
 
         )
