@@ -4,8 +4,11 @@ import CryptoDataList from "./CryptoDataList.jsx";
 
 const CryptoOverview = () => {
 
-    const [data, setData] = useState()
+    const [data, setData] = useState();
+    const [loading, setLoading] = useState(false)
+
     useEffect(() => {
+        setLoading(true)
         const options = {
             method: 'GET',
             headers: {
@@ -19,17 +22,19 @@ const CryptoOverview = () => {
             .then(response => {
                 console.log(response)
                 setData(response)
+                setLoading(false)
             })
             .catch(err => console.error(err));
     }, [])
 
+    console.log(data)
+
+    if(loading){
+        return(<h1>data loading..</h1>)
+    }
     if(data) {
 
-
-
         return (
-
-
             <DashboardItemLayout>
                 <h1>{data["Meta Data"]["1. Information"]}</h1>
                 <h3>{data["Meta Data"]["3. Digital Currency Name"]}</h3>
