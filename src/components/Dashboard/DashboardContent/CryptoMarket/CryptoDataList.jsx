@@ -20,7 +20,7 @@ const CryptoDataList = ({dataValue}) => {
     const data = {
         labels: labels.reverse(),
         datasets: [{
-            label: 'Crypto Overview MarketShare All',
+            label: 'MarketShare Overall',
             data: dataSet.reverse(),
             fill: false,
             borderColor: '#1ABC9C',
