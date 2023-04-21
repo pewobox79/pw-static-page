@@ -49,7 +49,7 @@ const router = createBrowserRouter(
                 </Route>
                 <Route path="/demo/dashboard" element={<DashboardLayout/>}>
                     <Route index element={<OverviewPage/>}/>
-                    <Route path={"/demo/dashboard/crypto"} element={<CryptoOverview/>}/>
+                    <Route path={"/demo/dashboard/crypto"} element={<CryptoOverview/>} errorElement={<h1>Request limits per minute! Try again later!</h1>}/>
                 </Route>
             </Route>
     ))

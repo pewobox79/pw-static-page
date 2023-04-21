@@ -1,4 +1,5 @@
 import CryptoDataItem from "./CryptoDataItem.jsx";
+import style from '../../../../styling/DashboardStyling/CryptoOverview.module.css'
 import 'chart.js/auto'
 import {Line} from "react-chartjs-2";
 
@@ -29,7 +30,9 @@ const CryptoDataList = ({dataValue}) => {
 
     if(data){
         return (
-            <Line data={data}/>
+
+                <Line data={data}/>
+
         )
     }
 

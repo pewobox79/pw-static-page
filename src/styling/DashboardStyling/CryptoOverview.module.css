@@ -1,0 +1,25 @@
+
+
+
+
+.selectionWrapper{
+    padding: 30px 10px;
+    text-align: left ;
+}
+
+.inputButton{
+    padding: 10px;
+    border-color: var(--mainGreen);
+    border-radius: 10px;
+}
+
+.inputButton:focus{
+    outline: none;
+    background-color: var(--mainGray);
+    color: var(--mainBodyColor)
+}
+
+
+.labelStyle{
+    font-size: 2rem
+}
