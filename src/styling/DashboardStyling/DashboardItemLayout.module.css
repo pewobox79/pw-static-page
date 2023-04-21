@@ -8,7 +8,8 @@
 
 .sectionInner{
     width: 90%;
-    margin:auto
+    margin:auto;
+    max-height: 500px;
 }
 
 
