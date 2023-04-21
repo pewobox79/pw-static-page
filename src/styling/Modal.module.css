@@ -22,7 +22,9 @@
     align-items: center;
     flex-direction: column;
     border-radius: 5%;
-    text-align: center
+    text-align: center;
+    border: none;
+    outline: none
 
 }
 
