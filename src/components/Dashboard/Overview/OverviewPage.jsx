@@ -1,11 +1,12 @@
 import styles from '../../../styling/DashboardStyling/OverviewPage.module.css'
-import ToDoList from "../DashboardContent/ToDoes/ToDoList.jsx";
+
+import {UserContext} from "../../Layout/DashboardLayout.jsx";
+import {useContext} from "react";
 const OverviewPage =()=>{
+    const context = useContext(UserContext)
     return(
         <div className={styles.overviewPageWrapper}>
-            <ToDoList/>
-
-
+            <h1>Welcome {context?.firstname} </h1>
         </div>
     )
 }

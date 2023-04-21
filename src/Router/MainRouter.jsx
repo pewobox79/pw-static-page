@@ -21,6 +21,8 @@ import LogoutForm from "../components/assetsComponents/Forms/LogoutForm.jsx";
 import ResetPassword from "../components/assetsComponents/Forms/ResetPassword.jsx";
 import LoggedOutPage from "../components/assetsComponents/pages/LoggedOutPage.jsx";
 import CryptoOverview from "../components/Dashboard/DashboardContent/CryptoMarket/CryptoOverview.jsx";
+import ToDoList from "../components/Dashboard/DashboardContent/ToDoes/ToDoList.jsx";
+import ErrorDataRequests from "../components/assetsComponents/ErrorDataRequests.jsx";
 
 
 const router = createBrowserRouter(
@@ -49,7 +51,8 @@ const router = createBrowserRouter(
                 </Route>
                 <Route path="/demo/dashboard" element={<DashboardLayout/>}>
                     <Route index element={<OverviewPage/>}/>
-                    <Route path={"/demo/dashboard/crypto"} element={<CryptoOverview/>} errorElement={<h1>Request limits per minute! Try again later!</h1>}/>
+                    <Route path={"/demo/dashboard/mytasks"} element={<ToDoList/>}/>
+                    <Route path={"/demo/dashboard/crypto"} element={<CryptoOverview/>} errorElement={<ErrorDataRequests/>}/>
                 </Route>
             </Route>
     ))
