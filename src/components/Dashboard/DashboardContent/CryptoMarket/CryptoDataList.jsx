@@ -31,8 +31,6 @@ const CryptoDataList = ({dataValue}) => {
         return (
             <Line data={data}/>
         )
-    }else{
-        <h1>loading</h1>
     }
 
 }
