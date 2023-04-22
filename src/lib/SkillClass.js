@@ -74,6 +74,18 @@ export class Skills {
         })
         return skillList
     }
+
+    getCollaborationTools() {
+        let skillList = []
+        this.data?.map(item => {
+            {
+                if (item.field_areas === "collaboration_tools") {
+                    skillList.push(item)
+                }
+            }
+        })
+        return skillList
+    }
 getFrameworks() {
         let skillList = []
         this.data?.map(item => {
