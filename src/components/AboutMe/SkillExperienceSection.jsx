@@ -34,12 +34,14 @@ function SkillExperienceSection(props) {
     const frameworks = skillList.getFrameworks();
     const tools = skillList.getToolsPlatforms();
     const cms = skillList.getCMS();
+    const collaboration = skillList.getCollaborationTools();
     return (
         <section className={style.skillAndLanguageSection}>
             <div className={style.skillAndLanguageSectionInner}>
             <SkillComponent title={"Coding, Scripts, Query Languages"} data={codingSkills} isLoading={isLoading}/>
             <SkillComponent title={"Frameworks | Libraries"} data={frameworks} isLoading={isLoading}/>
             <SkillComponent title={"Tools | Platforms"} data={tools} isLoading={isLoading}/>
+            <SkillComponent title={"Collaboration"} data={collaboration} isLoading={isLoading}/>
             <SkillComponent title={"Diverse Technologies"} data={diverseTec} isLoading={isLoading}/>
             <SkillComponent title={"Content Management Systems"} data={cms} isLoading={isLoading}/>
             <SkillComponent title={"Languages | Communication"} data={languages} isLoading={isLoading}/>

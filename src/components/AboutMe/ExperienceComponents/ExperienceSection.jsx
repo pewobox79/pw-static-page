@@ -7,6 +7,7 @@ import EducationContainer from "../EducationComponents/EducationContainer.jsx";
 export default function ExperienceSection() {
     return (
         <section className={style.experienceSection}>
+
             <div className={style.experienceSectionInner}>
                 <SubHeaderWithLine title={'Experiences'} />
                 <EmployerContainer />
