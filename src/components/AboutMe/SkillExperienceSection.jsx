@@ -12,19 +12,19 @@ function SkillExperienceSection(props) {
     const [isLoading, setIsLoading] = useState(false);
     const [skillsData, setSkillsData] = useState([]);
     useEffect(()=>{
+        const abortController = new AbortController()
         setIsLoading(true);
-        const requestOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
+        const requestOptions = {signal: abortController.signal};
         const dataFetch = fetch(`${backendURL}listofskills`,requestOptions )
             .then(data => data.json())
             .then(response => {
                 setSkillsData(response)
                 setIsLoading(false)
             })
+
+        return ()=>{
+            abortController.abort()
+        }
     }, [])
 
     const skillList = new Skills(skillsData)

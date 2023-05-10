@@ -13,7 +13,7 @@ const SubNavigationSection = ({subNavOpen, setSubNavOpen}) => {
         display: "none"
     }
     return (
-        <section className={style.subNavigationSection} style={subNavOpen ? display : noDisplay}>
+        <section className={subNavOpen ? style.subNavigationSectionOpen:style.subNavigationSectionClosed}>
 
             <CloseIcon className={style.subNavCloseButton} fontSize={"medium"} sx={{color: "#646881"}}
                        onClick={() => setSubNavOpen(false)}/>
