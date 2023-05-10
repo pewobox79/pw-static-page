@@ -6,6 +6,7 @@ import {useState} from "react";
 import {ToastContainer, toast} from 'react-toastify';
 import {authenticate, checkEmail, checkLocalStorage, comparePassword, setUserLogged} from "../../../lib/FormHandler.js";
 import {Alert} from "@mui/material";
+import globalStyle from '../../../styling/global.module.css'
 
 const INIT_VALUE = {
     email: "",
@@ -80,8 +81,8 @@ const LoginForm = () => {
                     />
                 </form>
                 <div style={{paddingTop: "20px", textAlign: "center"}}>
-                    <Link to={"/demo/register"}>Register to use the demo</Link><br/>
-                    <Link to={"/demo/resetPassword"}>Reset Password</Link>
+                    <Link to={"/demo/register"} className={globalStyle.textLinkStyle}>Register to use the demo</Link><br/>
+                    <Link to={"/demo/resetPassword"} className={globalStyle.textLinkStyle}>Reset Password</Link>
                 </div>
 
                 {errorMessage && <div style={{paddingTop: "10px"}}><Alert variant="filled" severity="error">

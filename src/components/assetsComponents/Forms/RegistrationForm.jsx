@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {beCryptPassword, checkLocalStorage} from "../../../lib/FormHandler.js";
 import {Alert} from "@mui/material";
+import globalStyle from '../../../styling/global.module.css'
 
 
 const INIT_VALUES = {
@@ -110,7 +111,7 @@ if(userValues) {
                 />
             </form>
             <div style={{paddingTop: "20px"}}>
-                <Link to={"/demo/login"}>Login to demo area</Link>
+                <Link to={"/demo/login"} className={globalStyle.textLinkStyle}>Login to demo area</Link>
             </div>
         </FormLayout>
     )
