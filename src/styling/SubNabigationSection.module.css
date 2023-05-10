@@ -1,22 +1,63 @@
-.subNavigationSection{
+.subNavigationSectionOpen{
     position: absolute;
-    height: 100vh;
-    width: 100%;
     background: var(--mainGreen);
     z-index: 400;
+
+    animation-name: subNav;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
 }
+
+@keyframes subNav {
+    0%{
+        width: 0;
+        height: 0
+    }
+
+    100%{
+        height: 100vh;
+        width: 100%;
+    }
+}
+.subNavigationSectionClosed{
+    display: none;
+}
+
 
 .subNavSectionInner{
     display: flex;
-    width: 90%;
-    margin: auto;
+
+
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 30px;
+    margin: auto;
 
+    animation-name: innerSection;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
 
 }
+
+@keyframes subNav {
+    0%{
+        width: 0;
+        height: 100vh;
+
+    }
+
+
+    100%{
+        width: 100%;
+        height: 100vh
+    }
+}
+
+
+
 .mainSubNavigation{
     margin-bottom: 50px;
 

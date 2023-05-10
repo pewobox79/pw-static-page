@@ -35,7 +35,6 @@ export function CryptoSelection({setCryptoQuery, cryptoQuery}) {
     })
 
     function handleChange(e) {
-        console.log(e.target.value)
         setCryptoQuery(e.target.value)
 
     }

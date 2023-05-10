@@ -11,7 +11,6 @@ const CryptoDataList = ({dataValue}) => {
     let dataSet = []
 
     for (let key in dataValue) {
-        console.log("key", dataValue[key])
         labels.push(key)
         const marketCapValue = dataValue[key]["6. market cap (USD)"]
         dataSet.push(marketCapValue)

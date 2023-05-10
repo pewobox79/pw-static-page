@@ -5,7 +5,7 @@ const ThankYouPage =()=>{
     return(
         <PageLayout>
             <h1>thank you for Registration</h1>
-            <p>your registration data is temporarly stored in you local storage. This action will prevent sharing your data with us.
+            <p>your registration data is temporarily stored in you local storage. This action will prevent sharing your data with us.
             <br/>
             the registration form is only for demo purposes and will not harm your GDPR rights.</p>
             <h3>

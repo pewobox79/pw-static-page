@@ -14,13 +14,14 @@ export async function getToDoList(){
 }
 
 
-export async function getCryptoChartValue(query){
+export async function getCryptoChartValue(query, abortController){
     const options = {
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': 'f2f2dfce82mshcb64156556ea80ap1968b8jsn5e6669fe879d',
             'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'
-        }
+        },
+        signal: abortController.signal
     };
 
     try {

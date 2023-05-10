@@ -13,8 +13,6 @@ const LoggedOutPage =()=>{
 
     },[])
 
-    console.log("data",content)
-
 
     return(
         <PageLayout>
