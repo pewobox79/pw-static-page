@@ -20,9 +20,17 @@ export default function ProjectDetails(props) {
     const projectDetails = new ProjectController(allProjects, "English", id)
 
     useEffect(() => {
+        const abortController = new AbortController()
         setIsLoading(true)
-        const projectData = getDataFromBackend("projectlist").then(res => setAllProjects(res))
-        setIsLoading(false)
+        const projectData = getDataFromBackend("projectlist", abortController)
+            .then(res => {
+                setAllProjects(res)
+                    setIsLoading(false)
+            })
+
+        return ()=>{
+            abortController.abort()
+        }
     }, [])
 
 

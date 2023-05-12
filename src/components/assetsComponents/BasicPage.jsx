@@ -9,8 +9,12 @@ const BasicPage =({pageData, apiString, title, description})=>{
     const [languageCode, setLanguageCode] = useState("English")
 
     useEffect(()=>{
-       const relevantData = getDataFromBackend(apiString).then(res => setBasicPageContent(res))
+        const abortController = new AbortController;
+       const relevantData = getDataFromBackend(apiString, abortController).then(res => setBasicPageContent(res))
 
+        return ()=>{
+           abortController.abort()
+        }
     },[])
 
 

@@ -4,16 +4,27 @@ import ProjectItem from "./ProjectItem.jsx";
 import {useEffect, useState} from "react";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import SectionHeader from "../assetsComponents/SectionHeader.jsx";
+import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 
 function ProjectsOverview() {
 
     const [projectList, setProjectList]=useState()
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(()=>{
-        const projectData = getDataFromBackend("projectlist").then(res => setProjectList(res))
+        setIsLoading(true)
+        const abortController = new AbortController()
+        const projectData = getDataFromBackend("projectlist", abortController).then(res => {
+            setProjectList(res)
+            setIsLoading(false)
+        })
+
+        return ()=>{
+            abortController.abort()
+        }
     },[])
-    if (!projectList) {
-        return <h1>no data</h1>
+    if (isLoading) {
+        return <SpinnerComponent/>
 
     } else {
         const courseItems = projectList?.map((projectItem) => {

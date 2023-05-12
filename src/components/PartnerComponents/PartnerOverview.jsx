@@ -10,7 +10,12 @@ export default function PartnerOverview() {
     const [partner, setPartner] = useState()
 
     useEffect(()=>{
-        getDataFromBackend("partnerlist").then(res => setPartner(res))
+        const abortController = new AbortController()
+        getDataFromBackend("partnerlist", abortController).then(res => setPartner(res))
+
+        return ()=>{
+            abortController.abort()
+        }
     },[])
     const PartnerItems = partner?.map((partnerItem) => {
 

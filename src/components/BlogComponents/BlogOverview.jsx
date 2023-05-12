@@ -9,7 +9,12 @@ export default function BlogOverview() {
     const [article, setArticle] = useState()
 
     useEffect(()=>{
-        const articleData = getDataFromBackend("articlelist").then(res => setArticle(res))
+        const abortController = new AbortController()
+        const articleData = getDataFromBackend("articlelist", abortController).then(res => setArticle(res))
+
+        return ()=>{
+            abortController.abort()
+        }
     },[])
     const ArticleItems = article?.map((articleItem) => {
 

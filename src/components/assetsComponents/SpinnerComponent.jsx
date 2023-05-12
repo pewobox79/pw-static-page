@@ -5,7 +5,7 @@ export default function SpinnerComponent() {
         <section
             style={{
                 display: 'flex',
-                height: '80%',
+                height: '80vh',
                 justifyContent: 'center',
                 alignItems: 'center',
             }}
