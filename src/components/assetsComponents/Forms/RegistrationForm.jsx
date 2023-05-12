@@ -55,7 +55,6 @@ if(userValues) {
     }
 
 
-
     function checkPassword(e) {
         if (newUser.password.length > 3) {
             if (newUser.password === e.target.value) {

@@ -1,0 +1,68 @@
+.blockWrapper{
+    min-height: 150px;
+    width: 100%;
+
+}
+
+.movingTextBlock{
+    background-color: yellow;
+    position: relative;
+
+}
+
+.movingTextBlock h1{
+    position: absolute;
+    width: 300px;
+
+    animation-name: movingText;
+    animation-direction: normal;
+    animation: movingText 5s infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+
+
+}
+
+@keyframes movingText {
+    0%{
+        left: -300px
+    }
+
+    100%{
+        left: 2300px;
+
+    }
+}
+
+
+
+.movingBackground{
+    position: absolute;
+    background-color: green;
+    text-align: center;
+    height: 150px;
+
+
+    animation-fill-mode: forwards;
+    animation-name: background;
+    animation-duration: 10s;
+
+
+
+}
+
+@keyframes background {
+    0%{
+        width: 10%
+    }
+
+    100%{
+        width: 100%
+    }
+}
+
+.textBlockPosition{
+    position: relative;
+    z-index: 1000;
+    color: white
+}

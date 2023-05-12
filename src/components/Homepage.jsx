@@ -5,6 +5,8 @@ import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
 import {getDemoInfoContent} from "../lib/DemoData.js";
+import MovingTextBlock from "./assetsComponents/MovingElements/MovingTextBlock.jsx";
+import MovingBG from "./assetsComponents/MovingElements/MovingBG.jsx";
 
 export default function Homepage() {
 
@@ -47,6 +49,7 @@ export default function Homepage() {
             <div style={{textAlign: "center", paddingTop: "100px"}}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
+
             {demoMessage &&
              <ModalContainer
                  openModal={demoMessage}
