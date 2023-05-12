@@ -7,11 +7,14 @@ export const useFetch = (searchString) => {
     const [fetchedData, setFetchedData] = useState([]);
 
     useEffect(() => {
+        const abortController = new AbortController()
 
-        fetch(url)
+        fetch(url, {signal: abortController.signal})
             .then(res => res.json())
             .then(data => setFetchedData(data))
-
+        return ()=>{
+                abortController.abort()
+        }
     }, [])
 
     return fetchedData

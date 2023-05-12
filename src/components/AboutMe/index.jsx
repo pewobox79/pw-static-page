@@ -7,7 +7,6 @@ import Head from "../assetsComponents/Head.jsx";
 import ExperienceSection from "./ExperienceComponents/ExperienceSection.jsx";
 import ServiceSection from "./ServiceComponents/ServiceSection.jsx";
 import TestimonialSection from "./TestimonalComponents/TestimonialSection.jsx";
-import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 import DownloadButton from "../assetsComponents/Buttons/DownloadButton.jsx";
 import {PersonalDataController} from "../../../apis/controller/dataController.js";

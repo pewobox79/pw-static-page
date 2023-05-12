@@ -13,7 +13,11 @@ export default function Course() {
 
 
     useEffect(()=>{
-    const courseData = getDataFromBackend("courselist").then(res => setCourses(res))
+        const abortController = new AbortController
+        const courseData = getDataFromBackend("courselist", abortController).then(res => setCourses(res))
+        return ()=>{
+            abortController.abort()
+        }
     },[])
     const courseItems = courses?.map((courseItem) => {
 
