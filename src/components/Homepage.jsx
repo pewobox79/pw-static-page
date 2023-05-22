@@ -4,9 +4,7 @@ import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
-import {getDemoInfoContent} from "../lib/DemoData.js";
-import MovingTextBlock from "./assetsComponents/MovingElements/MovingTextBlock.jsx";
-import MovingBG from "./assetsComponents/MovingElements/MovingBG.jsx";
+import {useInView} from "react-intersection-observer";
 
 export default function Homepage() {
 
@@ -14,6 +12,10 @@ export default function Homepage() {
     const [desktopMessage, setDesktopMessage] = useState(false)
     const [demoContent, setDemoContent] = useState();
     const device = navigator.userAgent;
+
+    const {ref,entry} = useInView({
+        threshold: 1
+    })
 
     useEffect(()=>{
         if (device.match(/Android/i) || device.match(/webOS/i) || device.match(/iPhone/i) || device.match(/iPad/i) || device.match(/iPod/i) || device.match(/BlackBerry/i) || device.match(/Windows Phone/i)) {
@@ -45,7 +47,7 @@ export default function Homepage() {
                       content="https://www.webdeveloper-peterwolf.com/pw-webdeveloper.png"/>
 
             </Helmet>
-            <img src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
+            <img ref={ref} className={styles.homepageImage} src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
             <div style={{textAlign: "center", paddingTop: "100px"}}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
