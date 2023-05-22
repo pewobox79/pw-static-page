@@ -23,7 +23,7 @@ const RegistrationForm = () => {
 
 
     useEffect(()=>{
-          const userValues = checkLocalStorage()
+          const userValues = checkLocalStorage("user")
 if(userValues) {
     setLocalStorageData(userValues)
     setUserExists(true)

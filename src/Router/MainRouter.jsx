@@ -23,6 +23,7 @@ import LoggedOutPage from "../components/assetsComponents/pages/LoggedOutPage.js
 import CryptoOverview from "../components/Dashboard/DashboardContent/CryptoMarket/CryptoOverview.jsx";
 import ToDoList from "../components/Dashboard/DashboardContent/ToDoes/ToDoList.jsx";
 import ErrorDataRequests from "../components/assetsComponents/ErrorDataRequests.jsx";
+import OnlineShop from "../components/Dashboard/DashboardContent/OnlineShop/index.jsx";
 
 
 const router = createBrowserRouter(
@@ -53,6 +54,7 @@ const router = createBrowserRouter(
                     <Route index element={<OverviewPage/>}/>
                     <Route path={"/demo/dashboard/mytasks"} element={<ToDoList/>}/>
                     <Route path={"/demo/dashboard/crypto"} element={<CryptoOverview/>} errorElement={<ErrorDataRequests/>}/>
+                    <Route path={"/demo/dashboard/shop"} element={<OnlineShop/>} errorElement={<ErrorDataRequests/>}/>
                 </Route>
             </Route>
     ))

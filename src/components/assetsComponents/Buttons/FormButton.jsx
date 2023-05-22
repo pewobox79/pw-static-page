@@ -1,6 +1,6 @@
 import styles from '../../../styling/Buttons.module.css'
 
-export default function FormButton({handleClick, type, title, status, placeholder, href}){
+export default function FormButton({handleClick, type, title, status}){
 
 
     return(

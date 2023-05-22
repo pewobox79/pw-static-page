@@ -14,8 +14,10 @@ function ProjectsOverview() {
     useEffect(()=>{
         setIsLoading(true)
         const abortController = new AbortController()
-        const projectData = getDataFromBackend("projectlist", abortController).then(res => {
-            setProjectList(res)
+        const projectData = getDataFromBackend("projectlist", abortController)
+            .then(data=>{
+                console.log("data set",data)
+            setProjectList(data)
             setIsLoading(false)
         })
 
@@ -23,6 +25,9 @@ function ProjectsOverview() {
             abortController.abort()
         }
     },[])
+
+    console.log(projectList)
+
     if (isLoading) {
         return <SpinnerComponent/>
 

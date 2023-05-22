@@ -24,9 +24,11 @@
     flex-direction: column;
     align-items: center;
 }
+
+
+
 .coreValueItem{
-    height: 100px;
-    width: 100px;
+
     border-radius: 50%;
     outline: 1px solid var(--mainGray);
     background-color: var(--mainGreen);
@@ -35,10 +37,22 @@
     align-items: center;
     margin: 20px;
     transition: .6s;
+    animation-name: coreValueItemAnimation;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+
+
+.coreValueItemHidden{
+    display: none;
 }
 
 .coreValueItem > img{
-    width: auto
+    width: auto;
+
 }
 
 .coreValueItem:hover{
@@ -52,9 +66,44 @@
     width: 100%;
     height: auto;
     font-weight: 500;
-    margin-top: -15px
+    margin-top: -15px;
+
+    animation-name: contentAnimation;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
 }
+
+@keyframes coreValueItemAnimation {
+
+    0%{
+        height: 30px;
+        width: 30px;
+
+    }
+
+    100%{
+        height: 100px;
+        width: 100px;
+
+    }
+
+}
+
+@keyframes contentAnimation {
+    0%{
+        color: white;
+    }
+
+    100%{
+        color: black
+    }
+
+}
+
+
+
 
 @media screen and (min-width: 620px){
     .coreValueInner{

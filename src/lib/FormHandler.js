@@ -50,15 +50,15 @@ export function checkEmail(storedEmail, email){
     return emailResponse
 }
 
-export function checkLocalStorage(){
+export function checkLocalStorage(name){
     let responseValue
-    const localUser = localStorage.getItem("user");
-    const userData = JSON.parse(localUser);
+    const localData = localStorage.getItem(name);
+    const relevantData = JSON.parse(localData);
 
-    if(localUser === "undefined"){
+    if(localData === "undefined"){
         responseValue = "empty"
     }else{
-        responseValue = userData
+        responseValue = relevantData
     }
 
    return responseValue
@@ -116,7 +116,7 @@ export function userLogoutWithDataDelete(){
 
 
 export function resetPassword(newPassword){
-    const userValue = checkLocalStorage()
+    const userValue = checkLocalStorage("user")
 
 
     let salt = bcrypt.genSaltSync(10);

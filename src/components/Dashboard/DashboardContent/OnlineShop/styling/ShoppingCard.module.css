@@ -1,0 +1,33 @@
+.shoppingCard {
+    width: 200px;
+    min-height: 300px;
+    height: auto;
+    border-radius: 10px;
+    outline: 1px solid var(--mainGray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    line-break: auto;
+    padding-bottom: 5px;
+    margin: 5px 0;
+    position: relative;
+}
+
+.cardImage{
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    background-size: contain;
+
+
+}
+
+.cardDescription {
+    height: auto;
+    max-width: 100%;
+    text-align: center;
+    word-break: break-word;
+
+}

@@ -13,7 +13,7 @@ const DashboardLayout = ({children}) => {
 
     const [contextData, setContextData] = useState()
     useEffect(()=>{
-        const userData = checkLocalStorage();
+        const userData = checkLocalStorage("user");
         setContextData(userData)
     },[])
 

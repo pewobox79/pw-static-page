@@ -11,15 +11,17 @@ const ToDoList =()=>{
 
     const [toDoes, setToDoes] = useState()
 
-    let limitOfTodoes =[]
-    useEffect(()=>{
 
-        const data = getToDoList()
+    useEffect(()=>{
+const abortController = new AbortController
+        const data = getToDoList(abortController)
             .then(data => setToDoes(data))
             .catch(err => console.log("error fetch", err))
 
 
-
+    return ()=>{
+        abortController.abort()
+    }
 
     },[])
 
