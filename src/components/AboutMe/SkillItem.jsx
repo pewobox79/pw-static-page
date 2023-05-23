@@ -18,7 +18,7 @@ export default function SkillItem({skill, skillLevelValue, skillValueColor}) {
         <div className={style.skillItemBody} ref={ref}>
             <div
                 style={{
-                    width: `${skillPercentage}`,
+                    width: `${entry?.isIntersecting ? skillPercentage : "0"}`,
                     backgroundColor: `${skillValueColor}`,
                 }}
                 className={style.skillLevel}

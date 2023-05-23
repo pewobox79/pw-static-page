@@ -5,6 +5,7 @@ import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
 import {useInView} from "react-intersection-observer";
+import FixedButton from "./assetsComponents/FixedButton/FixedButton.jsx";
 
 export default function Homepage() {
 
@@ -61,14 +62,8 @@ export default function Homepage() {
              />}
 
             {desktopMessage &&
-             <ModalContainer
-                 openModal={desktopMessage}
-                 setOpenModal={setDesktopMessage}
-                 modalTitle={"Checkout my new Demo Dashboard!"}
-                 modalBody={"My new feature will allow you to see some of my skills in action. You can access my Demo Dashboard for your consideration at any time. You won´t share any data with me or any other host. All data will be stored in your local browser exclusively. Enjoy it!"}
-                 internalLink={"/demo/register"}
-                 clientName={"Demo Dashboard"}
-             />}
+                <FixedButton buttonText={"Demo"} xPosition={"50"} yPosition={"0"}/>
+             }
         </div>
     )
 }
