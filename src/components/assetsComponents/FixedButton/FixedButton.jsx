@@ -12,8 +12,7 @@ function FixedButton({buttonText, xPosition, yPosition,}) {
       min-width: 40px;
       width: auto;
       display: flex;
-
-
+      color: var(--mainFontColor);
       background-color: var(--mainGreen);
 
     `
