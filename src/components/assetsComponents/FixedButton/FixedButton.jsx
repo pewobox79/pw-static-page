@@ -14,6 +14,8 @@ function FixedButton({buttonText, xPosition, yPosition,}) {
       display: flex;
       color: var(--mainFontColor);
       background-color: var(--mainGreen);
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
 
     `
 

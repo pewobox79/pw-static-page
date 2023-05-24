@@ -9,25 +9,13 @@ import FixedButton from "./assetsComponents/FixedButton/FixedButton.jsx";
 
 export default function Homepage() {
 
-    const [demoMessage, setDemoMessage] = useState(false);
-    const [desktopMessage, setDesktopMessage] = useState(false)
+
     const [demoContent, setDemoContent] = useState();
-    const device = navigator.userAgent;
+
 
     const {ref,entry} = useInView({
         threshold: 1
     })
-
-    useEffect(()=>{
-        if (device.match(/Android/i) || device.match(/webOS/i) || device.match(/iPhone/i) || device.match(/iPad/i) || device.match(/iPod/i) || device.match(/BlackBerry/i) || device.match(/Windows Phone/i)) {
-            // the user is using a mobile device, so redirect to the mobile version of the website
-            setDemoMessage(true)
-        }else{
-            setDesktopMessage(true)
-        }
-
-
-    }, [])
 
 
     return (
@@ -52,18 +40,6 @@ export default function Homepage() {
             <div style={{textAlign: "center", paddingTop: "100px"}}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
-
-            {demoMessage &&
-             <ModalContainer
-                 openModal={demoMessage}
-                 setOpenModal={setDemoMessage}
-                 modalTitle={"Demo on Desktop available!"}
-                 modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device! So please open my website on your desktop and enjoy the new feature!"}
-             />}
-
-            {desktopMessage &&
-                <FixedButton buttonText={"Demo"} xPosition={"50"} yPosition={"0"}/>
-             }
         </div>
     )
 }
