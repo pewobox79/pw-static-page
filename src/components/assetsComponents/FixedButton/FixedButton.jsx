@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-function FixedButton({buttonText, xPosition, yPosition,}) {
-
-    const StickyButton = styled.div`
+const StickyButton = styled.div`
       position: fixed;
-      right: ${yPosition ? yPosition: "0"};
-      top: ${xPosition ? xPosition : "0"}%;
+      right: ${props => props.yposition ? props.yposition: "0"};
+      top: ${props => props.xposition ? props.xposition : "0"}%;
       min-height: 130px;
       height: auto;
       min-width: 40px;
@@ -15,14 +13,15 @@ function FixedButton({buttonText, xPosition, yPosition,}) {
       color: var(--mainFontColor);
       background-color: var(--mainGreen);
       border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
+      border-bottom-left-radius: 20px;`
+function FixedButton({buttonText, xPosition, yPosition,}) {
 
-    `
+
 
 
     return (
         <Link to={"/demo/register"}>
-            <StickyButton>
+            <StickyButton xposition={xPosition} yposition={yPosition}>
                 <h3 style={{
                     textAlign: "center",
                     width: "100%",
