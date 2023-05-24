@@ -1,18 +1,18 @@
 export const ShoppingData = [
     {
         productId: 7766879,
-        title: "Prod1",
+        title: "Prod 1",
         description: "This is the product 1 description here",
         price: {
             value: 20,
             currency: "Euro"
         },
         imageFront: {
-            src: "https://shop.thelaend.de/images/product_images/original_images/Clothes/Shirts/laend_shop_Shirt-1920x1920.jpg",
+            src: "/src/assets/images/shop/t-shirt-frontview.png",
             alt: ""
         },
         imageBack: {
-            src: "https://shop.thelaend.de/images/product_images/original_images/Clothes/Shirts/laend_shop_Shirt-1920x1920_Close-up.jpg",
+            src: "/src/assets/images/shop/t-shirt-back.jpeg",
             alt: ""
         },
         specialOffer: {
@@ -53,11 +53,11 @@ export const ShoppingData = [
             currency: "Euro"
         },
         imageFront: {
-            src: "https://shop.thelaend.de/images/product_images/original_images/Clothes/Shirts/laend_shop_Shirt-1920x1920.jpg",
+            src: "/src/assets/images/shop/t-shirt2-front.jpeg",
             alt: ""
         },
         imageBack: {
-            src: "https://shop.thelaend.de/images/product_images/original_images/Clothes/Shirts/laend_shop_Shirt-1920x1920_Close-up.jpg",
+            src: "/src/assets/images/shop/t-shirt2-back.jpeg",
             alt: ""
         },
         specialOffer: {
@@ -98,11 +98,11 @@ export const ShoppingData = [
             currency: "Euro"
         },
         imageFront: {
-            src: "https://shop.thelaend.de/images/product_images/original_images/Clothes/Shirts/laend_shop_Shirt-1920x1920.jpg",
+            src: "/src/assets/images/shop/t-shirt2-back.jpeg",
             alt: ""
         },
         imageBack: {
-            src: "https://shop.thelaend.de/images/product_images/original_images/Clothes/Shirts/laend_shop_Shirt-1920x1920_Close-up.jpg",
+            src: "/src/assets/images/shop/t-shirt2-front.jpeg",
             alt: ""
         },
         specialOffer: {
@@ -118,7 +118,7 @@ export const ShoppingData = [
                 {
                     type: "x-small",
                     value: "xs",
-                    status: true
+                    status: false
                 }, {
                     type: "small",
                     value: "sm",

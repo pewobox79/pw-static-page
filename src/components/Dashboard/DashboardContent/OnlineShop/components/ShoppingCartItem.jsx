@@ -10,7 +10,7 @@ function ShoppingCartItem(props){
     const [updateState, setUpdateState] = useState(false);
 
     function handleEdit(){
-        console.log("update item entry")
+
         setUpdateState(!updateState)
     }
 

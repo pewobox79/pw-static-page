@@ -8,8 +8,8 @@ export function CryptoSelection({setCryptoQuery, cryptoQuery}) {
             value: "BTC",
             id: "123"
         }, {
-            name: "Etherium",
-            value: "ETH",
+            name: "Etherium-Classic",
+            value: "ETC",
             id: "4532524"
         }, {
             name: "Solana",

@@ -54,7 +54,7 @@ function ShoppingItem(props) {
     function addToCard(e) {
 
         const itemCheckResponse = checkNewItemBeforeAdding(newItem)
-        console.log("new item is valid: ",itemCheckResponse)
+        console.warn("new item is valid: ",itemCheckResponse)
 
 
         if(isItemValid) {
