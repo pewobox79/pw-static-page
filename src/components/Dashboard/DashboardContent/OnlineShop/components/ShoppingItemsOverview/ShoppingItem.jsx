@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {useContext, useState} from "react";
 import HorizontalLine from "../../../../../assetsComponents/HorizontalLine.jsx";
 import {checkLocalStorage} from "../../../../../../lib/FormHandler.js";
-import {addNewItemsToCart, checkCartItemExists} from "../../services.js";
+import {addNewItemsToCart, checkCartItemExists, checkNewItemBeforeAdding} from "../../services.js";
 import {ShoppingContext} from "../../index.jsx";
 import {Chip} from "@mui/material";
 
@@ -30,6 +30,7 @@ function ShoppingItem(props) {
     const data = useContext(ShoppingContext)
 
     const [itemAlreadyInCart, setItemAlreadyInCart] = useState(false);
+    const [isItemValid, setIsItemValid] = useState();
 
     const [newItem, setNewItem] = useState({
         title: props.title,
@@ -42,26 +43,34 @@ function ShoppingItem(props) {
 
 
     function handleChange(e) {
+
         setNewItem({
             ...newItem, [e.target.name]: e.target.value
         })
     }
 
 
-
     function addToCard(e) {
-        e.preventDefault();
-        const existingCartItems = checkLocalStorage("cart")
-        const itemExits = checkCartItemExists(existingCartItems, newItem.productId)
 
-        if(itemExits){
-            console.log("item exists check: ",itemExits)
-            setItemAlreadyInCart(true)
-        }else{
-            data.setShoppingCartItemArray(newItem)
-            addNewItemsToCart(data.shoppingCartItemArray, () => checkLocalStorage("cart"))
+        const itemCheckResponse = checkNewItemBeforeAdding(newItem)
+        console.log()
+        setIsItemValid(itemCheckResponse)
 
+        if(isItemValid) {
+            e.preventDefault();
+            const existingCartItems = checkLocalStorage("cart")
+            const itemExits = checkCartItemExists(existingCartItems, newItem.productId)
+
+            if (itemExits) {
+                console.log("item exists check: ", itemExits)
+                setItemAlreadyInCart(true)
+            } else {
+                data.setShoppingCartItemArray(newItem)
+                addNewItemsToCart(newItem, () => checkLocalStorage("cart"))
+
+            }
         }
+
 
     }
 
@@ -102,7 +111,7 @@ function ShoppingItem(props) {
                 <FormButton title={"add to card"} handleClick={addToCard}/>
             </form>
             {itemAlreadyInCart ? <p style={{backgroundColor: "red", color: "white", position: "absolute", bottom: "30px", padding: "5px"}} onClick={()=> setItemAlreadyInCart(false)}>item already in cart</p> : null}
-
+            {!isItemValid ? <p style={{backgroundColor: "red", color: "white", position: "absolute", bottom: "30px", padding: "5px"}}>select Value</p> : null}
         </div>
 
 

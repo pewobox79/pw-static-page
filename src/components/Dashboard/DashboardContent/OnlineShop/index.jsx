@@ -15,16 +15,18 @@ const OnlineShop = () => {
 
     const [shoppingCartItemArray, setShoppingCartItemArray] = useState(myCartItems ? myCartItems : [])
 
-    console.log("Arrayy",shoppingCartItemArray)
+    console.log("Array", shoppingCartItemArray)
 
     return (
-        <ShoppingContext.Provider value={{ShoppingData, shoppingCartItemArray, setShoppingCartItemArray}}>
-            <DashboardItemLayout>
+
+        <DashboardItemLayout>
+            <ShoppingContext.Provider value={{ShoppingData, shoppingCartItemArray, setShoppingCartItemArray}}>
                 <ShoppingCart/>
                 <h1>Online Shop</h1>
                 <ShoppingItemsOverview/>
-            </DashboardItemLayout>
-        </ShoppingContext.Provider>
+            </ShoppingContext.Provider>
+        </DashboardItemLayout>
+
     )
 }
 
