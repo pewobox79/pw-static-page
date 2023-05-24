@@ -12,6 +12,7 @@ import {Chip} from "@mui/material";
 const CardImage = styled.img`
   background: url(${props => props.url1}) center center no-repeat;
   background-size: cover;
+  width: 100%;
   min-height: 50px;
   height: 100%;
   -moz-border-radius-topleft: 10px;
@@ -30,7 +31,7 @@ function ShoppingItem(props) {
     const data = useContext(ShoppingContext)
 
     const [itemAlreadyInCart, setItemAlreadyInCart] = useState(false);
-    const [isItemValid, setIsItemValid] = useState();
+    const [isItemValid, setIsItemValid] = useState(true);
 
     const [newItem, setNewItem] = useState({
         title: props.title,
@@ -53,8 +54,8 @@ function ShoppingItem(props) {
     function addToCard(e) {
 
         const itemCheckResponse = checkNewItemBeforeAdding(newItem)
-        console.log()
-        setIsItemValid(itemCheckResponse)
+        console.log("new item is valid: ",itemCheckResponse)
+
 
         if(isItemValid) {
             e.preventDefault();
@@ -62,7 +63,6 @@ function ShoppingItem(props) {
             const itemExits = checkCartItemExists(existingCartItems, newItem.productId)
 
             if (itemExits) {
-                console.log("item exists check: ", itemExits)
                 setItemAlreadyInCart(true)
             } else {
                 data.setShoppingCartItemArray(newItem)
@@ -82,7 +82,8 @@ function ShoppingItem(props) {
 
         <div className={styles.shoppingCard}>
 
-            <div className={styles.cardImage}><CardImage url1={props.imageFront.src} url2={props.imageBack.src}/></div>
+            <div className={styles.cardImage}>
+                <CardImage url1={props.imageFront.src} url2={props.imageBack.src}/></div>
             <div>
                 <h3>{props.title}</h3>
             </div>
@@ -111,7 +112,6 @@ function ShoppingItem(props) {
                 <FormButton title={"add to card"} handleClick={addToCard}/>
             </form>
             {itemAlreadyInCart ? <p style={{backgroundColor: "red", color: "white", position: "absolute", bottom: "30px", padding: "5px"}} onClick={()=> setItemAlreadyInCart(false)}>item already in cart</p> : null}
-            {!isItemValid ? <p style={{backgroundColor: "red", color: "white", position: "absolute", bottom: "30px", padding: "5px"}}>select Value</p> : null}
         </div>
 
 
