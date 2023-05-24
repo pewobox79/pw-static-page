@@ -6,9 +6,8 @@ import {ShoppingContext} from "../../index.jsx";
 const ShoppingItemsOverview = () => {
 
     const data = useContext(ShoppingContext)
-    console.log("overview reloaded")
 
-    const TheShoppingItems = data.ShoppingData.map((item) => (
+    const TheShoppingItems = data?.ShoppingData.map((item) => (
         <ShoppingItem key={item.title + item.price.value} {...item}/>
     ))
 
