@@ -64,6 +64,7 @@ const LoginForm = () => {
         <>
             <FormLayout>
                 <h1>Demo Login</h1>
+                <p>No worries - Your data is not shared with me.</p>
                 <form className={styles.loginForm}>
                     <label className={styles.labelStyling} htmlFor={"email"}>Email</label><br/>
                     <input id="email" type="email" name="email" value={user.email} className={styles.inputStyling}

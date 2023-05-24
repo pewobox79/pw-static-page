@@ -81,6 +81,7 @@ if(userValues) {
         <FormLayout>
             {userExists && <Alert variant={"filled"} severity={"success"}>You are already registered! We will redirect you automatically to the login form!</Alert>}
             <h1 style={{textAlign: "center"}}>Demo Registration</h1>
+            <p>No worries - Your data is not shared with me.<br/>Every data exchange is only on your personal browser.</p>
             <form className={styles.loginForm}>
                 <label className={styles.labelStyling} htmlFor={"firstname"}>Firstname</label><br/>
                 <input id="firstname" type="text" name="firstname" value={newUser.firstname}
