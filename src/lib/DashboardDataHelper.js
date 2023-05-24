@@ -1,8 +1,8 @@
-export async function getToDoList(){
+export async function getToDoList(abortController){
     const URL = "https://jsonplaceholder.typicode.com/todos"
 
     try{
-        const response = await fetch(URL)
+        const response = await fetch(URL, {signal: abortController.signal})
         const data = await response.json()
         return data
 
@@ -28,8 +28,7 @@ export async function getCryptoChartValue(query, abortController){
 
 
         const response = await fetch(`https://alpha-vantage.p.rapidapi.com/query?market=CNY&function=DIGITAL_CURRENCY_WEEKLY&symbol=${query}`, options)
-        const data = await response.json()
-        return data
+        return await response.json();
     }catch(err){
 
         console.log("fetch failed", err)

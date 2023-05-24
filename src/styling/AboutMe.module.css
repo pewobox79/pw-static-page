@@ -7,7 +7,7 @@
 }
 
 
-.headerSectionInner{
+.headerSectionInner {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -16,15 +16,18 @@
     height: auto;
     margin: auto
 }
-.headerImageContainer{
+
+.headerImageContainer {
     padding-top: 40px;
     display: flex;
     justify-content: center;
 }
-.headerImageContainer > img{
+
+.headerImageContainer > img {
     width: auto;
-    margin: auto
+    margin: auto;
 }
+
 
 .headerQuoteContainer {
     display: flex;
@@ -53,7 +56,7 @@
     font-size: 2rem;
 }
 
-.aboutMeContentBox > p{
+.aboutMeContentBox > p {
     font-size: 1.2rem;
 }
 
@@ -67,7 +70,7 @@
 
 }
 
-.skillAndLanguageSectionInner{
+.skillAndLanguageSectionInner {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -247,19 +250,20 @@
     border: 1px solid var(--mainGreen)
 }
 
-.downloadSection{
+.downloadSection {
     padding: 30px;
     min-height: 400px
 }
 
 @media screen and (min-width: 769px) {
 
-    .headerSectionInner{
+    .headerSectionInner {
         width: 100%;
         max-width: 1200px;
         flex-direction: row;
         padding-top: 100px;
     }
+
     .headerImageContainer {
         display: flex;
         justify-content: center;
@@ -268,7 +272,6 @@
         width: 50%
 
     }
-
 
 
     .headerQuoteContainer {
@@ -285,7 +288,7 @@
         flex-direction: row;
     }
 
-    .skillAndLanguageSectionInner{
+    .skillAndLanguageSectionInner {
 
         flex-direction: row;
         width: 100%;
@@ -316,10 +319,9 @@
 
     }
 
-    .skillLevel{
+    .skillLevel {
         font-size: 1rem
     }
-
 
 
 }

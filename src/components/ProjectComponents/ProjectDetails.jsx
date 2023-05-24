@@ -25,7 +25,7 @@ export default function ProjectDetails(props) {
         const projectData = getDataFromBackend("projectlist", abortController)
             .then(res => {
                 setAllProjects(res)
-                    setIsLoading(false)
+                setIsLoading(false)
             })
 
         return ()=>{

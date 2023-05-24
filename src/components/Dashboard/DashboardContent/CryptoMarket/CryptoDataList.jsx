@@ -6,7 +6,6 @@ import {Line} from "react-chartjs-2";
 
 const CryptoDataList = ({dataValue}) => {
 
-
     let labels = []
     let dataSet = []
 
@@ -27,12 +26,8 @@ const CryptoDataList = ({dataValue}) => {
         }]
     };
 
-    if(data){
-        return (
-
-                <Line data={data}/>
-
-        )
+    if (data) {
+        return <Line data={data}/>
     }
 
 }

@@ -1,0 +1,53 @@
+.shoppingCartOpen{
+    position: relative;
+    min-height: 150px;
+    height: auto;
+    display: flex;
+    background-color: var(--mainGreen);
+    text-align: center;
+
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+
+
+}
+
+
+
+.openCloseButton{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px
+
+}
+.shoppingCartClosed{
+    display: none
+}
+
+.cartButtonOpen{
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+    margin:30px auto;
+    border-radius: 20px;
+    right: 10px;
+    z-index: 1000;
+    background-color: var(--mainGray);
+    text-align: center;
+}
+
+.CartItemWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--mainBodyColor);
+    outline: 1px solid var(--mainGray);
+    border-radius: 10px;
+    margin: 3px auto
+}

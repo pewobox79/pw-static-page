@@ -23,6 +23,7 @@ export default function AboutMeHeader({personalData}) {
                         height={500}
                         style={{filter: 'grayscale(100%)'}}
                         alt={expertName}
+                        loading="lazy"
                     />
                 </div>
 

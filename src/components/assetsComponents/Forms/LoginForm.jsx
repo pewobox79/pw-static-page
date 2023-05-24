@@ -41,7 +41,7 @@ const LoginForm = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        let userDataStored = checkLocalStorage();
+        let userDataStored = checkLocalStorage("user");
 
         if(userDataStored === null ){
             setErrorMessage(true);

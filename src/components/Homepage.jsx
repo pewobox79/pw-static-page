@@ -4,27 +4,18 @@ import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
-import {getDemoInfoContent} from "../lib/DemoData.js";
-import MovingTextBlock from "./assetsComponents/MovingElements/MovingTextBlock.jsx";
-import MovingBG from "./assetsComponents/MovingElements/MovingBG.jsx";
+import {useInView} from "react-intersection-observer";
+import FixedButton from "./assetsComponents/FixedButton/FixedButton.jsx";
 
 export default function Homepage() {
 
-    const [demoMessage, setDemoMessage] = useState(false);
-    const [desktopMessage, setDesktopMessage] = useState(false)
+
     const [demoContent, setDemoContent] = useState();
-    const device = navigator.userAgent;
-
-    useEffect(()=>{
-        if (device.match(/Android/i) || device.match(/webOS/i) || device.match(/iPhone/i) || device.match(/iPad/i) || device.match(/iPod/i) || device.match(/BlackBerry/i) || device.match(/Windows Phone/i)) {
-            // the user is using a mobile device, so redirect to the mobile version of the website
-            setDemoMessage(true)
-        }else{
-            setDesktopMessage(true)
-        }
 
 
-    }, [])
+    const {ref,entry} = useInView({
+        threshold: 1
+    })
 
 
     return (
@@ -45,28 +36,10 @@ export default function Homepage() {
                       content="https://www.webdeveloper-peterwolf.com/pw-webdeveloper.png"/>
 
             </Helmet>
-            <img src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
+            <img ref={ref} className={styles.homepageImage} src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
             <div style={{textAlign: "center", paddingTop: "100px"}}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
-
-            {demoMessage &&
-             <ModalContainer
-                 openModal={demoMessage}
-                 setOpenModal={setDemoMessage}
-                 modalTitle={"Demo on Desktop available!"}
-                 modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device! So please open my website on your desktop and enjoy the new feature!"}
-             />}
-
-            {desktopMessage &&
-             <ModalContainer
-                 openModal={desktopMessage}
-                 setOpenModal={setDesktopMessage}
-                 modalTitle={"Checkout my new Demo Dashboard!"}
-                 modalBody={"My new feature will allow you to see some of my skills in action. You can access my Demo Dashboard for your consideration at any time. You won´t share any data with me or any other host. All data will be stored in your local browser exclusively. Enjoy it!"}
-                 internalLink={"/demo/register"}
-                 clientName={"Demo Dashboard"}
-             />}
         </div>
     )
 }

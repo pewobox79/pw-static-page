@@ -10,10 +10,24 @@
 
 }
 
-img{
+.homepageImage{
     width: 100%;
+
+    animation-name: imgGrow;
+    animation-timing-function: ease-out;
+    animation-duration: 3s;
+
 }
 
+@keyframes imgGrow {
+    0%{
+        width: 0
+    }
+
+    100%{
+        width: 100%
+    }
+}
 .qrCode{
     width: 150px;
 }
