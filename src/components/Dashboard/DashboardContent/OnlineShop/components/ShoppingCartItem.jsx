@@ -25,6 +25,8 @@ function ShoppingCartItem(props){
 
         //add new data to the productID
     }
+
+
 function handleUpdateEntry(e){
         console.log("update entry")
         setUpdateState(!updateState)

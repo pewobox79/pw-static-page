@@ -11,15 +11,16 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const StyledBadge = styled(Badge)(({theme}) => ({
     '& .MuiBadge-badge': {
         right: -3,
-        top: 13,
-        border: `2px solid green`,
-        padding: '0 4px',
+        top: 0,
+        border: `2px solid grey`,
+        padding: '0 6px',
+        backgroundColor: "grey"
     },
 }));
 
 function ShoppingCart({data}) {
 
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
     const myCart = checkLocalStorage("cart")
 
 
@@ -48,13 +49,14 @@ function ShoppingCart({data}) {
                     <div onClick={handleOpen} className={styles.openCloseButton}>X</div>
                     <h1>Shopping cart</h1>
                     {CartItemList ? CartItemList : <p>No items in Shopping cart</p>}
-
-                    <FormButton title={"Delete Cart"} handleClick={deleteCompleteCart}/>
+                    <div style={{width: "80%", margin: "auto", paddingBottom: "10px"}}>
+                    <FormButton title={"Clear Cart"} handleClick={deleteCompleteCart}/>
+                    </div>
                 </div>
                 :
                 <div className={styles.cartButtonOpen} onClick={handleOpen}>
                     <IconButton aria-label="cart">
-                        <StyledBadge badgeContent={myCart ? myCart.length : "0"}>
+                        <StyledBadge badgeContent={myCart?.length ? myCart.length : "0"} sx={{color: "black", fontWeight: "bold"}}>
                             <ShoppingCartIcon sx={{color: "black"}}/>
                         </StyledBadge>
                     </IconButton>
