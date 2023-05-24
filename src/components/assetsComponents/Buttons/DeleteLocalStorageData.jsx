@@ -22,8 +22,8 @@ setMessage(true)
     return(
         <>
 
-            {message ? <div><h4>Are you sure to delete all of your data related to this website?</h4> <button className={styles.formButtonStyling} onClick={deleteLocalStorageData}>Yes, I am sure</button> </div>: <FormButton title={"Delete your local Data"} handleClick={handleDeleteData} status={false} />}
-            {deleteMessage ? <p>Your local storage has been deleted</p> : null}
+            {message ? <div><h4>Are you sure to clear all of your data related to this website in local storage?</h4> <button className={styles.formButtonStyling} onClick={deleteLocalStorageData}>Yes, I am sure</button> </div>: <FormButton title={"Delete your local Data"} handleClick={handleDeleteData} status={false} />}
+            {deleteMessage ? <p>Your local storage has been cleared</p> : null}
             </>
     )
 }
