@@ -11,11 +11,10 @@ export const ShoppingContext = createContext(null);
 const OnlineShop = () => {
 
     const myCartItems = checkLocalStorage("cart");
-    console.log("checked ", myCartItems)
 
     const [shoppingCartItemArray, setShoppingCartItemArray] = useState(myCartItems ? myCartItems : [])
 
-    console.log("Array", shoppingCartItemArray)
+
 
     return (
 
