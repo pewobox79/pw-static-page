@@ -37,7 +37,7 @@ export default function Homepage() {
 
             </Helmet>
             <img ref={ref} className={styles.homepageImage} src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
-            <div style={{textAlign: "center", paddingTop: "100px"}}>
+            <div  className={styles.mainPageButton}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
         </div>
