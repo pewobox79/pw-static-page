@@ -6,16 +6,18 @@ import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
 import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
 import {useInView} from "react-intersection-observer";
 import FixedButton from "./assetsComponents/FixedButton/FixedButton.jsx";
+import {checkFetchingErrors} from "../../apis/dataProvider.js";
 
 export default function Homepage() {
 
 
-    const [demoContent, setDemoContent] = useState();
+
 
 
     const {ref,entry} = useInView({
         threshold: 1
     })
+
 
 
     return (

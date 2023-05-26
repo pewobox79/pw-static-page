@@ -41,6 +41,8 @@ export function removeItemFromCart(selectedItem) {
 
 
 export function updateCartListEntry(selectedItem, updatedValue, updatedName) {
+
+    console.log("in updated fnc", selectedItem, )
     const allCartItems = checkLocalStorage("cart");
     const selectedCartItem = allCartItems.filter((item) => item.productId === selectedItem)
     console.log("old item values", selectedCartItem)
@@ -55,5 +57,16 @@ export function updateCartListEntry(selectedItem, updatedValue, updatedName) {
 
 
 export function checkNewItemBeforeAdding(item) {
-    return !(item.size === "" || item.quantity === 0 || item.quantity === null);
+
+    if(item.size !== ""){
+        if(item.quantity === null || item.quantity === 0){
+            return false
+        }
+    }else if(item.size === ""){
+        if(item.quantity === null || item.quantity === 0){
+            return false
+        }
+    }else{
+        return true
+    }
 }

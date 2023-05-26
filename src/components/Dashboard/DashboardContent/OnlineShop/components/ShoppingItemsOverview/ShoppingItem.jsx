@@ -56,7 +56,6 @@ function ShoppingItem(props) {
         const itemCheckResponse = checkNewItemBeforeAdding(newItem)
         console.warn("new item is valid: ",itemCheckResponse)
 
-
         if(isItemValid) {
             e.preventDefault();
             const existingCartItems = checkLocalStorage("cart")
@@ -103,11 +102,11 @@ function ShoppingItem(props) {
             }}>
                 <label htmlFor="size">Size</label>
                 <select id="size" name="size" onChange={handleChange}>
-                    <option value={0}>Choose your size..</option>
+                    <option >Choose your size..</option>
                     {ListOfVariants}
                 </select>
                 <label htmlFor="quantity">Quantity</label>
-                <input type="number" name="quantity" min={0} defaultValue={newItem.quantity} onChange={handleChange}/>
+                <input type="number" name="quantity" min={1} defaultValue={newItem.quantity} onChange={handleChange}/>
                 <br/>
                 <FormButton title={"add to card"} handleClick={addToCard}/>
             </form>
