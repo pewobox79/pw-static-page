@@ -1,6 +1,19 @@
 /*const backendURL = import.meta.env.VITE_VERCEL_DRUPAL_BACKEND_URL*/
 const backendURL = "https://pewobox.com/api/"
 
+
+export async function checkFetchingErrors(){
+    try{
+        const response = await fetch(backendURL)
+        const data = await response.json()
+        if(data) return true
+    }catch{
+        return false
+
+    }
+
+
+}
 export async function getDataFromBackend(searchString, abortController) {
     let responseData
 

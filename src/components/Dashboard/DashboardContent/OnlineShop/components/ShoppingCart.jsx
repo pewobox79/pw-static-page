@@ -37,7 +37,7 @@ function ShoppingCart({data}) {
     const CartItemList = myCart?.map((cartItem) => {
 
         return (
-            <ShoppingCartItem key={cartItem.productId+cartItem.productId} {...cartItem} isOpen={isOpen} setIsOpen={setIsOpen}/>
+            <ShoppingCartItem key={cartItem.productId+cartItem.productId} cartItem={cartItem} isOpen={isOpen} setIsOpen={setIsOpen}/>
         )
     })
 

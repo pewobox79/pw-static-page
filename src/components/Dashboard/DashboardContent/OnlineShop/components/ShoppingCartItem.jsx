@@ -5,7 +5,7 @@ import styles from '../styling/ShoppigCart.module.css'
 import {removeItemFromCart, updateCartListEntry} from "../services.js";
 import {useState} from "react";
 import {CartUpdateInput} from "./CartUpdateInput.jsx";
-function ShoppingCartItem(props){
+function ShoppingCartItem({cartItem, setIsOpen}){
 
     const [updateState, setUpdateState] = useState(false);
 
@@ -15,9 +15,10 @@ function ShoppingCartItem(props){
     }
 
     function handleUpdateValue(e){
-
+        e.preventDefault()
+        console.log("item to update", cartItem)
         //store values in Object
-        updateCartListEntry(props.productId, e.target.value, e.target.name)
+        updateCartListEntry(cartItem.productId, e.target.value, e.target.name)
 
         //call localstorage entries
 
@@ -33,16 +34,16 @@ function handleUpdateEntry(e){
 }
     function handleDelete(){
 
-        removeItemFromCart(props.productId)
-        props.setIsOpen(false)
+        removeItemFromCart(cartItem.productId)
+        setIsOpen(false)
 
     }
     return(
         <div className={styles.CartItemWrapper}>
-                <p>{props.title}</p>
-                <p>{props.description}</p>
-                <p>{props.price} Euro</p>
-            {updateState ? <CartUpdateInput value={props.quantity} name={"quantity"} onChange={handleUpdateValue}/> : <p>{props.quantity} Stk</p>}
+                <p>{cartItem.title}</p>
+                <p>{cartItem.description}</p>
+                <p>{cartItem.price} Euro</p>
+            {updateState ? <CartUpdateInput value={cartItem.quantity} name={"quantity"}/> : <p>{cartItem.quantity} pc.</p>}
             {updateState ? <SaveIcon sx={{fontSize: "1rem"}} onClick={handleUpdateEntry}/> :<EditIcon sx={{fontSize: "1rem"}} onClick={handleEdit}/>}
                 <DeleteIcon sx={{fontSize: "1rem"}} onClick={handleDelete}/>
         </div>
