@@ -2,11 +2,10 @@
 const backendURL = "https://pewobox.com/api/"
 
 
-export async function checkFetchingErrors(){
+export async function checkFetchingErrorsBackend(){
     try{
-        const response = await fetch(backendURL)
-        const data = await response.json()
-        if(data) return true
+        const response = await fetch("https://pewobox.com")
+        return response.ok
     }catch{
         return false
 

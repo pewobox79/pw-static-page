@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import AboutMeHeader from "./AboutMeHeader.jsx";
 import HeaderText from "../assetsComponents/HeaderText.jsx";
 import SkillExperienceSection from "./SkillExperienceSection.jsx";
