@@ -3,10 +3,9 @@ import Logo from '../assets/peter-wolf-web-developer-advisor_s.png';
 import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
-import ModalContainer from "./assetsComponents/Modal/ModalContainer.jsx";
+
 import {useInView} from "react-intersection-observer";
-import FixedButton from "./assetsComponents/FixedButton/FixedButton.jsx";
-import {checkFetchingErrors} from "../../apis/dataProvider.js";
+
 
 export default function Homepage() {
 

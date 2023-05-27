@@ -4,7 +4,7 @@ import Footer from "../Footer.jsx";
 import Header from "../Header/index.jsx";
 import FixedButton from "../assetsComponents/FixedButton/FixedButton.jsx";
 import ModalContainer from "../assetsComponents/Modal/ModalContainer.jsx";
-import {checkFetchingErrors} from "../../../apis/dataProvider.js";
+import {checkFetchingErrorsBackend} from "../../../apis/dataProvider.js";
 import Maintenance from "../assetsComponents/Maintenance.jsx";
 
 export default function MainLayout({children}) {
@@ -16,7 +16,7 @@ export default function MainLayout({children}) {
 
     useEffect(() => {
 
-        checkFetchingErrors().then((res) => {
+        checkFetchingErrorsBackend().then((res) => {
             setOnline(res)
         })
 
