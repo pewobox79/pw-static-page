@@ -52,12 +52,11 @@ function ShoppingItem(props) {
 
 
     function addToCard(e) {
-
+        e.preventDefault();
         const itemCheckResponse = checkNewItemBeforeAdding(newItem)
-        console.warn("new item is valid: ",itemCheckResponse)
 
-        if(isItemValid) {
-            e.preventDefault();
+        if(itemCheckResponse) {
+            setIsItemValid(true)
             const existingCartItems = checkLocalStorage("cart")
             const itemExits = checkCartItemExists(existingCartItems, newItem.productId)
 
@@ -68,6 +67,8 @@ function ShoppingItem(props) {
                 addNewItemsToCart(newItem, () => checkLocalStorage("cart"))
 
             }
+        }else{
+            setIsItemValid(false)
         }
 
 
@@ -111,6 +112,7 @@ function ShoppingItem(props) {
                 <FormButton title={"add to card"} handleClick={addToCard}/>
             </form>
             {itemAlreadyInCart ? <p style={{backgroundColor: "red", color: "white", position: "absolute", bottom: "30px", padding: "5px"}} onClick={()=> setItemAlreadyInCart(false)}>item already in cart</p> : null}
+            {!isItemValid ? <p style={{backgroundColor: "red", color: "white", position: "absolute", bottom: "30px", padding: "5px"}}>select values</p>: null}
         </div>
 
 
