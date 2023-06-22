@@ -70,3 +70,14 @@ export function checkNewItemBeforeAdding(item) {
         return true
     }
 }
+
+
+export function calcTotalCartSum(shoppingCart){
+    let initialValue
+    const totalValue = shoppingCart.reduce((accumulate, value)=>{
+
+        return initialValue =  accumulate + value.price * value.quantity
+
+    }, 0)
+return initialValue
+}

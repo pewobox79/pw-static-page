@@ -6,6 +6,7 @@ import ShoppingCartItem from "./ShoppingCartItem.jsx";
 import {IconButton, Badge} from "@mui/material";
 import styled from "styled-components";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {calcTotalCartSum} from "../services.js";
 
 
 const StyledBadge = styled(Badge)(({theme}) => ({
@@ -22,6 +23,7 @@ function ShoppingCart({data}) {
 
     const [isOpen, setIsOpen] = useState(false)
     const myCart = checkLocalStorage("cart")
+console.log("myCart", myCart)
 
 
     function handleOpen(e) {
@@ -33,6 +35,7 @@ function ShoppingCart({data}) {
         setIsOpen(false)
     }
 
+    const totalCartValue =calcTotalCartSum(myCart)
 
     const CartItemList = myCart?.map((cartItem) => {
 
@@ -50,7 +53,9 @@ function ShoppingCart({data}) {
                     <h1>Shopping cart</h1>
                     {CartItemList ? CartItemList : <p>No items in Shopping cart</p>}
                     <div style={{width: "80%", margin: "auto", paddingBottom: "10px"}}>
+                        <div>Total Sum: {totalCartValue}</div>
                     <FormButton title={"Clear Cart"} handleClick={deleteCompleteCart}/>
+
                     </div>
                 </div>
                 :
