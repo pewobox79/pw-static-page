@@ -23,7 +23,7 @@ function ShoppingCart({data}) {
 
     const [isOpen, setIsOpen] = useState(false)
     const myCart = checkLocalStorage("cart")
-console.log("myCart", myCart)
+
 
 
     function handleOpen(e) {

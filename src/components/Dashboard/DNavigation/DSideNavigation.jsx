@@ -20,6 +20,8 @@ const DSideNavigation =()=>{
                     </li>
                     <li><NavLink to={"/demo/dashboard/crypto"} className={({ isActive }) =>
                         isActive ? styles.active : styles.inactive}>CryptoBoard</NavLink></li>
+                    <li><NavLink to={"/demo/dashboard/shop"} className={({ isActive }) =>
+                        isActive ? styles.active : styles.inactive}>OnlineShop</NavLink></li>
                 </ul>
             </aside>
         </div>
