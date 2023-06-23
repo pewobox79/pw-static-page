@@ -10,7 +10,7 @@ import {Chip} from "@mui/material";
 
 
 const CardImage = styled.img`
-  background: url(${props => props.url1}) center center no-repeat;
+  background: url(${props=> props.url1}) center center no-repeat;
   background-size: cover;
   width: 100%;
   min-height: 50px;
