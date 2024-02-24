@@ -24,9 +24,10 @@ export default function Homepage() {
             <Helmet>
                 <title>Peter Wolf | Freelance WebDeveloper & Advisor </title>
                 <meta name="description"
-                      content="Freelance WebDeveloper & Advisor Peter Wolf. Teckstack is JavaScript, ReactJS, NextJS, PreactJS with focus on headless approach. "/>
+                      content="Fullstack web developer and skilled programmer specializing in JavaScript, React, and Next.js. Elevate your digital projects with expertise in cutting-edge technologies. Let's transform ideas into seamless, responsive, and dynamic web experiences together.
+"/>
                 <meta name="keywords"
-                      content="web development, reactjs, nextjs, freelance, web developer, advisor, consultant, javascript, headless cms"/>
+                      content="programeming, web development, reactjs, nextjs, freelance, web developer, programer, advisor, consultant, javascript, headless cms"/>
                 <meta name="type" property="og:type" content="website"/>
                 <meta name="title" property="og:title"
                       content="Freelance WebDeveloper & Advisor Peter Wolf. Teckstack is JavaScript, ReactJS, NextJS, PreactJS with focus on headless approach. "/>
