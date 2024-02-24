@@ -4,6 +4,7 @@ import CardItem from '../assetsComponents/CardItem';
 import Head from "../assetsComponents/Head.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
 import {useEffect, useState} from "react";
+import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 
 
 export default function PartnerOverview() {
@@ -54,7 +55,7 @@ export default function PartnerOverview() {
                     }
                 />
                 <section className={style.cardWrapper}>
-                    <div className={style.cardListingInner}>{PartnerItems}</div>
+                    {PartnerItems ? <div className={style.cardListingInner}>{PartnerItems}</div> : <SpinnerComponent/>}
                 </section>
             </section>
         </>

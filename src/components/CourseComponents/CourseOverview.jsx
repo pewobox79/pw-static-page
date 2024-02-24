@@ -3,7 +3,8 @@ import SectionHeader from '../assetsComponents/SectionHeader';
 import CardItem from '../assetsComponents/CardItem';
 import Head from "../assetsComponents/Head.jsx";
 import {getDataFromBackend} from "../../../apis/dataProvider.js";
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
+import SpinnerComponent from "../assetsComponents/SpinnerComponent.jsx";
 
 
 export default function Course() {
@@ -15,6 +16,7 @@ export default function Course() {
     useEffect(()=>{
         const abortController = new AbortController
         const courseData = getDataFromBackend("courselist", abortController).then(res => setCourses(res))
+
         return ()=>{
             abortController.abort()
         }
@@ -57,7 +59,8 @@ export default function Course() {
                     }
                 />
                 <section className={style.cardWrapper}>
-                    <div className={style.cardListingInner}>{courseItems}</div>
+                  {courseItems ?
+                  <div className={style.cardListingInner}>{courseItems}</div> : <SpinnerComponent/>}
                 </section>
             </section>
         </>
