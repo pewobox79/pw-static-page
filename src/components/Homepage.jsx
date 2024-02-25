@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Logo from '../assets/peter-wolf-web-developer-advisor_s.png';
+import Logo from '../assets/peter-wolf-software-developer-programmer-and-advisor.png';
 import styles from '../styling/Homepage.module.css';
 import {Helmet} from 'react-helmet'
 import {DefaultButton} from "./assetsComponents/Buttons/DefaultButton.jsx";
