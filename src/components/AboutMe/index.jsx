@@ -18,8 +18,8 @@ const AboutMe = () => {
     const [loading, setLoading] = useState(false)
 
     const aboutMeData = useFetch("expertlist");
-
     const expertData = new PersonalDataController(aboutMeData, "English")
+    const metaData = expertData.getMetaData();
     const cVDataToDownload = expertData.getExpertCV()
     const imageUrl = expertData.getExpertImage()
 
@@ -29,8 +29,8 @@ const AboutMe = () => {
     }
     return (
         <>
-            <Head title={"About Peter Wolf the web developer & advisor!"}
-                  description={"Get to know peter wolf better! He is a Freelance Web Developer and Advisor to "}
+            <Head title={metaData?.title}
+                  description={metaData?.description}
                   keywords={"CoreValues, freelancer, web developer, techstack"}
                   image={imageUrl}
             />

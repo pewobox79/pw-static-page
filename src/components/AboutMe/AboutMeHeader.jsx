@@ -4,11 +4,8 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import {PersonalDataController} from "../../../apis/controller/dataController.js";
 
 export default function AboutMeHeader({personalData}) {
-
-
     const myExpertData = new PersonalDataController(personalData, "English")
     const imgURL = myExpertData.getExpertImage()
-
     const persQuote = myExpertData.getPersonalQuote()
     const persDescription = myExpertData.getExpertDescription()
     const expertName = myExpertData.getExpertName()

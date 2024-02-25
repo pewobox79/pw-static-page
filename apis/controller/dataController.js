@@ -72,4 +72,17 @@ export class PersonalDataController {
 
         return expertCV
     }
+
+    getMetaData(){
+        let metaData
+        this.data?.map((item)=>{
+            if(item.langcode === this.language){
+                metaData = {
+                    title: item.field_meta_title,
+                    description: item.field_meta_description
+                }
+            }
+        })
+        return metaData
+    }
 }
