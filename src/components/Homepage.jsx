@@ -38,7 +38,7 @@ export default function Homepage() {
                       content="https://www.webdeveloper-peterwolf.com/pw-webdeveloper.png"/>
 
             </Helmet>
-            <img ref={ref} className={styles.homepageImage} src={Logo} alt="Logo Peter Wolf - Freelance Webdeveloper & Advisor"/>
+            <img ref={ref} className={styles.homepageImage} src={Logo} alt="Logo Peter Wolf - Freelance software developer & Advisor"/>
             <div  className={styles.mainPageButton}>
                 <DefaultButton title={"get to know me"} target={"_self"} href={"/aboutme"}/>
             </div>
