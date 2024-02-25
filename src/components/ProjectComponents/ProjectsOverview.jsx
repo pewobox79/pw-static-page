@@ -16,7 +16,6 @@ function ProjectsOverview() {
         const abortController = new AbortController()
         const projectData = getDataFromBackend("projectlist", abortController)
             .then(data=>{
-                console.log("data set",data)
             setProjectList(data)
             setIsLoading(false)
         })
@@ -26,7 +25,6 @@ function ProjectsOverview() {
         }
     },[])
 
-    console.log(projectList)
 
     if (isLoading) {
         return <SpinnerComponent/>

@@ -16,7 +16,6 @@ function ShoppingCartItem({cartItem, setIsOpen}){
 
     function handleUpdateValue(e){
         e.preventDefault()
-        console.log("item to update", cartItem)
         //store values in Object
         updateCartListEntry(cartItem.productId, e.target.value, e.target.name)
 
@@ -29,7 +28,6 @@ function ShoppingCartItem({cartItem, setIsOpen}){
 
 
 function handleUpdateEntry(e){
-        console.log("update entry")
         setUpdateState(!updateState)
 }
     function handleDelete(){

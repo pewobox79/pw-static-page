@@ -33,8 +33,6 @@ const CryptoOverview = () => {
     }, [cryptoQuery])
 
 
-console.log(data)
-
 
 return (
 
