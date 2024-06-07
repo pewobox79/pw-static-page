@@ -66,9 +66,32 @@ a > .downloadButton{
 
 }
 
+
+
 .formButtonStyling:hover{
     color: var(--mainGreen);
     background-color: var(--mainBodyColor);
+}
+
+
+.formButtonNegativeStyle{
+    padding: 10px;
+    min-width: 150px;
+    width: auto;
+    font-size: 1.3rem;
+    background-color: var(--mainBodyColor);
+    outline: 0;
+    border: 1px solid var(--mainGreen);
+    margin-top: 10px;
+    border-radius: 30px;
+    color: var(--mainGreen);
+    cursor: pointer ;
+
+}
+
+.formButtonNegativeStyle:hover{
+    color: var(--mainBodyColor);
+    background-color: var(--mainGreen);
 }
 
 .formButtonStylingDeactive{
