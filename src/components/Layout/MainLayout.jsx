@@ -10,7 +10,7 @@ import ConsentContextLayout from "./ConsentContextLayout.jsx";
 import ConsentModule from "../ConsentModule/index.jsx";
 import {Helmet} from "react-helmet";
 import {ConsentContext} from "../../store/ContextStore.js";
-import { HelmetProvider } from 'react-helmet-async';
+import {HelmetProvider} from 'react-helmet-async';
 import ConsentButton from "../ConsentModule/components/ConsentButton.jsx";
 import GoogleTrackingCode from "../ConsentModule/components/GoogleTrackingCode.jsx";
 
@@ -41,32 +41,32 @@ export default function MainLayout({children}) {
     <>
 
       {online ?
-<HelmetProvider>
+        <HelmetProvider>
 
-        <ConsentContextLayout>
-          <GoogleTrackingCode/>
-          <Header/>
-          {demoMessage &&
-            <ModalContainer
-              openModal={demoMessage}
-              setOpenModal={setDemoMessage}
-              modalTitle={"Demo on Desktop available!"}
-              modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device! So please open my website on your desktop and enjoy the new feature!"}
-            />}
+          <ConsentContextLayout>
+            <GoogleTrackingCode/>
+            <Header/>
+            {demoMessage &&
+              <ModalContainer
+                openModal={demoMessage}
+                setOpenModal={setDemoMessage}
+                modalTitle={"Demo on Desktop available!"}
+                modalBody={"You can access my Demo Dashboard for your consideration. This feature is not available from your mobile device! So please open my website on your desktop and enjoy the new feature!"}
+              />}
 
-          <ConsentModule/>
-          {desktopMessage &&
-            <FixedButton buttonText={"Demo"} xPosition={"40"} yPosition={"0"}/>
-          }
-          <main>
-            {children}
-            <Outlet/>
-            <ConsentButton/>
-          </main>
-          <Footer/>
+            <ConsentModule/>
+            {desktopMessage &&
+              <FixedButton buttonText={"Demo"} xPosition={"40"} yPosition={"0"}/>
+            }
+            <main>
+              {children}
+              <Outlet/>
+              <ConsentButton/>
+            </main>
+            <Footer/>
 
-        </ConsentContextLayout>
-</HelmetProvider>
+          </ConsentContextLayout>
+        </HelmetProvider>
         : <><Maintenance/></>}
     </>
   )
