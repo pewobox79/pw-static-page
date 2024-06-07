@@ -11,6 +11,7 @@ const ConsentModule = () => {
 
   function handleAcceptAll() {
 
+
     consentContext.setContext({
       ...consentContext.context,
       consentModuleOpen: false,

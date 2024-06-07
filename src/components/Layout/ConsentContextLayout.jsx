@@ -20,7 +20,7 @@ const ConsentContextLayout=({children})=>{
   }})
 
   return <ConsentContext.Provider value={{context, setContext}}>
-    <GoogleTrackingCode/>
+
     {children}
   </ConsentContext.Provider>
 }

@@ -10,7 +10,9 @@ import ConsentContextLayout from "./ConsentContextLayout.jsx";
 import ConsentModule from "../ConsentModule/index.jsx";
 import {Helmet} from "react-helmet";
 import {ConsentContext} from "../../store/ContextStore.js";
+import { HelmetProvider } from 'react-helmet-async';
 import ConsentButton from "../ConsentModule/components/ConsentButton.jsx";
+import GoogleTrackingCode from "../ConsentModule/components/GoogleTrackingCode.jsx";
 
 export default function MainLayout({children}) {
 
@@ -39,8 +41,10 @@ export default function MainLayout({children}) {
     <>
 
       {online ?
-        <ConsentContextLayout>
+<HelmetProvider>
 
+        <ConsentContextLayout>
+          <GoogleTrackingCode/>
           <Header/>
           {demoMessage &&
             <ModalContainer
@@ -62,6 +66,7 @@ export default function MainLayout({children}) {
           <Footer/>
 
         </ConsentContextLayout>
+</HelmetProvider>
         : <><Maintenance/></>}
     </>
   )

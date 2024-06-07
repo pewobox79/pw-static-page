@@ -12,10 +12,10 @@ const GoogleTrackingCode=()=>{
               function gtag() { dataLayer.push(arguments); }
               gtag('config', '${consentContext && consentContext.context.googleId}');
               gtag('consent', 'update', {
-                  ad_user_data: '${consentContext && consentContext.context.values['ad_user_data']}',
-                  ad_personalization: '${consentContext && consentContext.context.values['ad_personalization']}',
-                  ad_storage: '${consentContext && consentContext.context.values['ad_storage']}',
-                  analytics_storage: '${consentContext && consentContext.context.values['analytics_storage']}',
+                  'ad_user_data': '${consentContext && consentContext.context.values['ad_user_data']}',
+                  'ad_personalization': '${consentContext && consentContext.context.values['ad_personalization']}',
+                  'ad_storage': '${consentContext && consentContext.context.values['ad_storage']}',
+                  'analytics_storage': '${consentContext && consentContext.context.values['analytics_storage']}',
             });
             
           `}
