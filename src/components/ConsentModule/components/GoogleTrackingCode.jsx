@@ -1,4 +1,4 @@
-import {Helmet} from "react-helmet-async";
+import {Helmet} from "react-helmet";
 import React, {useContext} from "react";
 import {ConsentContext} from "../../../store/ContextStore.js";
 

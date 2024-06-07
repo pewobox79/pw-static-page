@@ -41,8 +41,6 @@ export default function MainLayout({children}) {
     <>
 
       {online ?
-        <HelmetProvider>
-
           <ConsentContextLayout>
             <GoogleTrackingCode/>
             <Header/>
@@ -66,7 +64,6 @@ export default function MainLayout({children}) {
             <Footer/>
 
           </ConsentContextLayout>
-        </HelmetProvider>
         : <><Maintenance/></>}
     </>
   )
