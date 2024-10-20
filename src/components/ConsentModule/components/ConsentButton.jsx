@@ -15,7 +15,7 @@ const ConsentButton=()=>{
     })
 
   }
-  return <>{ consentContext.context.consentModuleOpen ? null: <FingerprintIcon onClick={handleClick} fontSize={"large"} className={style.consentButton}/>}
+  return <>{ consentContext.context.consentModuleOpen ? null: <FingerprintIcon onClick={handleClick} fontSize="large" className={style.consentButton}/>}
 </>}
 
 export default ConsentButton
